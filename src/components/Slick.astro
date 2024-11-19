@@ -1,0 +1,47 @@
+---
+import Card from "./Card.astro";
+
+const { list, title, background = "bg-green-200", textColor = "text-gray-800" } = Astro.props;
+---
+<div class="mt-5">
+  <!-- Slider Container -->
+  <h2 class="text-2xl text-green-800 font-bold mb-3">{title}</h2>
+  <div class="flex flex-row overflow-x-auto gap-4 p-5 px-4 snap-x snap-mandatory scrollbar-hide">
+    <!-- Slides -->
+    {
+      list.map((item) => (
+          <Card
+            title={item.title}
+            image={item.image}
+            body={item.body}
+            whatsapp={item.whatsapp}
+            background={background}
+            textColor={textColor}
+          />
+
+      ))
+    }
+  </div>
+</div>
+
+<style>
+/* show beautiful scrollbar */
+.flex-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.flex-row::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.flex-row::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.flex-row::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+</style>
