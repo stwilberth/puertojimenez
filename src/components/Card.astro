@@ -21,20 +21,18 @@ const {
 ---
 
 <div
-  class={`relative min-w-[250px] sm:min-w-[300px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden ${background} transition-transform transform hover:scale-105`}
+  class={`relative min-w-[200px] md:min-w-[200px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden ${background} transition-transform transform hover:scale-105`}
 >
-  <!-- Image -->
   {
     image && (
       <img
         src={image}
         alt={title}
-        class="w-full h-32 sm:h-40 object-cover"
+        class="object-cover"
       />
     )
   }
 
-  <!-- Body -->
   <div class="p-4">
     <a href={href}>
       <h3
@@ -43,7 +41,7 @@ const {
         {title}
       </h3>
     </a>
-    <p class={`mb-4 font-normal text-gray-700 dark:text-gray-400 ${textColor}`}>
+    <p class={`mb-4 font-normal text-sm md:text-base text-gray-700 dark:text-gray-400 ${textColor}`}>
       {body}
     </p>
     {

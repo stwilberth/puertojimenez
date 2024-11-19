@@ -3,10 +3,10 @@ import Card from "./Card.astro";
 
 const { list, title, background = "bg-green-200", textColor = "text-gray-800" } = Astro.props;
 ---
-<div class="mt-5">
+<div class="">
   <!-- Slider Container -->
   <h2 class="text-2xl text-green-800 font-bold mb-3">{title}</h2>
-  <div class="flex flex-row overflow-x-auto gap-4 p-5 px-4 snap-x snap-mandatory scrollbar-hide">
+  <div class="flex flex-row overflow-x-auto gap-4 py-5 snap-x snap-mandatory scrollbar-hide">
     <!-- Slides -->
     {
       list.map((item) => (

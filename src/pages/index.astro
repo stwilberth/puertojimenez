@@ -14,7 +14,6 @@ const gradient = "bg-white";
   <main>
     <Nav />
     <Container>
-      <div class={`flex flex-col gap-4 p-4 rounded-lg shadow-md ${gradient}`}>
         <p class="text-gray-700 text-lg leading-relaxed font-lora">
 			<span class="font-bold text-green-600">The Puerto Jiménez</span> is a small town in the south of Costa Rica. It is a
           beautiful place with a lot of nature and wildlife. This town is the
@@ -22,22 +21,27 @@ const gradient = "bg-white";
             >Corcovado National Park</span
           >, one of the most biodiverse places in the world.
         </p>
-      </div>
+	</Container>
 
-      <Slick
-        list={activities}
-        title="Activities"
-        background="bg-green-200"
-        textColor="text-gray-800"
-      />
+	<Container>
+		<Slick
+		  list={activities}
+		  title="Activities"
+		  background="bg-green-200"
+		  textColor="text-gray-800"
+		/>
+	</Container>
 
+	<Container>
       <Slick
         list={guides}
         title="Guides"
         background="bg-green-200"
         textColor="text-gray-800"
       />
+	</Container>
 
+	<Container>
       <Slick
         list={craftsman}
         title="Craftsman"
