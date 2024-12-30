@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Airport Transfers",
+        "body": "Start your Puerto Jiménez adventure seamlessly with our reliable airport transfer services. We offer comfortable, air-conditioned vehicles and experienced drivers for direct transportation between Puerto Jiménez Airport and your accommodation, ensuring a stress-free arrival and departure.",
+        "href": "/transportation/airport-transfers"
+    },
+    {
+        "title": "Local Taxi Services",
+        "body": "Navigate Puerto Jiménez with ease through our trusted network of local taxi services. Available 24/7, our licensed drivers provide safe and convenient transportation to restaurants, beaches, and local attractions at competitive rates.",
+        "href": "/transportation/taxis"
+    },
+    {
+        "title": "Boat Transportation",
+        "body": "Experience the stunning Golfo Dulce with our professional boat transportation services. Whether you're heading to remote beaches, planning a fishing expedition, or crossing to neighboring communities, our experienced captains ensure safe and scenic journeys across these pristine waters.",
+        "href": "/transportation/boats"
+    },
+    {
+        "title": "Car Rentals",
+        "body": "Explore the Osa Peninsula at your own pace with our carefully selected rental vehicles. From compact cars to 4x4 SUVs equipped for adventure, we partner with reliable local agencies to provide well-maintained vehicles perfect for your Costa Rican journey.",
+        "href": "/transportation/car-rental"
+    },
+    {
+        "title": "Uber",
+        "body": "Uber is a ride-sharing service that allows you to request a ride from your phone or computer. It is a great way to get around Puerto Jiménez.",
+        "href": "/transportation/uber"
+    }
+] 

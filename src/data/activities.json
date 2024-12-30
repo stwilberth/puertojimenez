@@ -1,6 +1,22 @@
 [
-    { "title": "Hike", "body": "The Corcovado National Park is one of the most biodiverse places in the world. It is home to a lot of wildlife and nature. The best way to explore it is by hiking.", "href": "/corcovado" },
-    { "title": "Fishing", "body": "Puerto Jiménez is a great place to go fishing. There are a lot of fish in the area, and you can go fishing in the ocean or in the rivers.", "href": "/fishing" },
-    { "title": "Kayaking", "body": "Puerto Jiménez is a great place to go kayaking. There are a lot of rivers and lakes in the area, and you can go kayaking in them.", "href": "/kayaking" },
-    { "title": "Snorkeling", "body": "Puerto Jiménez is a great place to go snorkeling. There are a lot of fish and other sea creatures in the area, and you can snorkel in the ocean.", "href": "/snorkeling" }
+    {
+        "title": "Hike",
+        "body": "Embark on an unforgettable journey through Corcovado National Park, a UNESCO World Heritage site renowned as one of Earth's most biodiverse sanctuaries. Experience close encounters with exotic wildlife, trek through pristine rainforest, and discover hidden waterfalls in this natural paradise.",
+        "href": "/corcovado"
+    },
+    {
+        "title": "Fishing",
+        "body": "Discover world-class sport fishing in the pristine waters of Puerto Jiménez. Whether you're casting lines in the crystal-clear Pacific Ocean or exploring serene river systems, our waters offer exceptional opportunities for both novice and experienced anglers to catch prized game fish.",
+        "href": "/fishing"
+    },
+    {
+        "title": "Kayaking",
+        "body": "Navigate through stunning mangrove forests and serene waterways in Puerto Jiménez's premier kayaking destinations. Our diverse network of rivers and protected coves offers both peaceful nature exploration and exciting adventures for paddlers of all skill levels.",
+        "href": "/kayaking"
+    },
+    {
+        "title": "Snorkeling",
+        "body": "Dive into the vibrant underwater world of the Golfo Dulce, where crystal-clear waters reveal an extraordinary marine ecosystem. Swim alongside tropical fish, observe graceful sea turtles, and explore colorful coral reefs in one of Costa Rica's most pristine marine environments.",
+        "href": "/snorkeling"
+    }
 ]
