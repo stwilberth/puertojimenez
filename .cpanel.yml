@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home3/aprend173/puertojimenez.info/
+    - export DEPLOYPATH=/home3/apren173/puertojimenez.info/
     - /bin/cp -R dist/* $DEPLOYPATH
