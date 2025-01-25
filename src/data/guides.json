@@ -1,6 +1,17 @@
 [
-    { "title": "Jairo", "body": "Jairo is a guide that knows the area very well. He is a great guide for anyone looking to explore the area.", "href": "/guides/jairo"},
-    { "title": "Jóse", "body": "Jóse is a guide that knows the area very well. He is a great guide for anyone looking to explore the area.", "href": "/guides/jose"},
-    { "title": "Thomas", "body": "Thomas is a guide that knows the area very well. He is a great guide for anyone looking to explore the area.", "href": "/guides/thomas"},
-    { "title": "Ronal", "body": "Ronal is a guide that knows the area very well. He is a great guide for anyone looking to explore the area.", "href": "/guides/ronal"}
+    {
+        "title": "Jairi",
+        "body": "Specialized in photography tours, Jairi will help you capture the perfect shots of wildlife and landscapes in and around Corcovado National Park.",
+        "href": "/tours-and-activities#guides"
+    },
+    {
+        "title": "Tomas",
+        "body": "An experienced nature guide with extensive knowledge of local flora and fauna. Perfect for birdwatching and wildlife spotting tours.",
+        "href": "/tours-and-activities#guides"
+    },
+    {
+        "title": "Gabriel",
+        "body": "Local expert with deep knowledge of the Osa Peninsula's hidden gems. Specializes in customized tours and unique experiences.",
+        "href": "/tours-and-activities#guides"
+    }
 ]

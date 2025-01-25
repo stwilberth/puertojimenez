@@ -1,6 +1,32 @@
 [
-    { "title": "Juan", "body": "Juan is a craftsman that knows the area very well. He is a great craftsman for anyone looking to explore the area.", "href": "/craftsman/juan" },
-    { "title": "Maria", "body": "Maria is a craftsman that knows the area very well. She is a great craftsman for anyone looking to explore the area.", "href": "/craftsman/maria" },
-    { "title": "Pedro", "body": "Pedro is a craftsman that knows the area very well. He is a great craftsman for anyone looking to explore the area.", "href": "/craftsman/pedro" },
-    { "title": "Ana", "body": "Ana is a craftsman that knows the area very well. She is a great craftsman for anyone looking to explore the area.", "href": "/craftsman/ana" }
+    {
+        "title": "Manuel Bianco",
+        "body": "Master craftsman specializing in traditional Costa Rican handicrafts. His work reflects the rich cultural heritage of the Osa Peninsula.",
+        "href": "/tours-and-activities#artisans"
+    },
+    {
+        "title": "Juan Carlos",
+        "body": "Creates unique pieces inspired by local wildlife and nature. Known for his attention to detail and use of sustainable materials.",
+        "href": "/tours-and-activities#artisans"
+    },
+    {
+        "title": "Hubert",
+        "body": "Skilled artisan crafting authentic souvenirs that capture the essence of Puerto Jiménez and its surroundings.",
+        "href": "/tours-and-activities#artisans"
+    },
+    {
+        "title": "Coco",
+        "body": "Specializes in local crafts using traditional techniques passed down through generations.",
+        "href": "/tours-and-activities#artisans"
+    },
+    {
+        "title": "Pica Piedra",
+        "body": "Master stoneworker creating beautiful pieces from local materials. Each piece tells a unique story of the region.",
+        "href": "/tours-and-activities#artisans"
+    },
+    {
+        "title": "Claudia Mariposa",
+        "body": "Creates stunning butterfly-inspired art pieces that capture the vibrant colors and natural beauty of the Osa Peninsula.",
+        "href": "/tours-and-activities#artisans"
+    }
 ]

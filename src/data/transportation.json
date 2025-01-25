@@ -1,27 +1,27 @@
 [
     {
-        "title": "Airport Transfers",
-        "body": "Start your Puerto Jiménez adventure seamlessly with our reliable airport transfer services. We offer comfortable, air-conditioned vehicles and experienced drivers for direct transportation between Puerto Jiménez Airport and your accommodation, ensuring a stress-free arrival and departure.",
-        "href": "/transportation/airport-transfers"
+        "title": "By Plane",
+        "body": "The fastest and most convenient way to reach Puerto Jiménez. Several domestic airlines operate daily flights from San José International Airport.",
+        "href": "/getting-here#by-plane"
     },
     {
-        "title": "Local Taxi Services",
-        "body": "Navigate Puerto Jiménez with ease through our trusted network of local taxi services. Available 24/7, our licensed drivers provide safe and convenient transportation to restaurants, beaches, and local attractions at competitive rates.",
-        "href": "/transportation/taxis"
+        "title": "Direct Bus Service",
+        "body": "Take the Transportes Blanco bus from San José (Caribbean Bus Terminal) directly to Puerto Jiménez. Departs at 12:00 PM daily. Journey time approximately 8 hours.",
+        "href": "/getting-here#direct-bus"
     },
     {
-        "title": "Boat Transportation",
-        "body": "Experience the stunning Golfo Dulce with our professional boat transportation services. Whether you're heading to remote beaches, planning a fishing expedition, or crossing to neighboring communities, our experienced captains ensure safe and scenic journeys across these pristine waters.",
-        "href": "/transportation/boats"
+        "title": "Bus via Golfito",
+        "body": "Alternative route via Tracopa bus to Rio Claro, then connecting to Golfito. Choose between coastal or mountain routes. Includes a scenic ferry crossing to Puerto Jiménez.",
+        "href": "/getting-here#via-golfito"
     },
     {
-        "title": "Car Rentals",
-        "body": "Explore the Osa Peninsula at your own pace with our carefully selected rental vehicles. From compact cars to 4x4 SUVs equipped for adventure, we partner with reliable local agencies to provide well-maintained vehicles perfect for your Costa Rican journey.",
-        "href": "/transportation/car-rental"
+        "title": "Ferry Service",
+        "body": "Regular ferry service between Golfito and Puerto Jiménez. Multiple departures daily, offering beautiful views of the Golfo Dulce. Limited capacity available.",
+        "href": "/getting-here#ferry"
     },
     {
-        "title": "Uber",
-        "body": "Uber is a ride-sharing service that allows you to request a ride from your phone or computer. It is a great way to get around Puerto Jiménez.",
-        "href": "/transportation/uber"
+        "title": "Local Transportation",
+        "body": "Various local transport options including taxis and rental cars are available for getting around Puerto Jiménez and exploring the Osa Peninsula.",
+        "href": "/getting-here#local"
     }
-] 
+]

@@ -1,22 +1,27 @@
 [
     {
-        "title": "Hike",
+        "title": "Corcovado National Park",
         "body": "Embark on an unforgettable journey through Corcovado National Park, a UNESCO World Heritage site renowned as one of Earth's most biodiverse sanctuaries. Experience close encounters with exotic wildlife, trek through pristine rainforest, and discover hidden waterfalls in this natural paradise.",
-        "href": "/corcovado"
+        "href": "/tours-and-activities#corcovado"
     },
     {
-        "title": "Fishing",
-        "body": "Discover world-class sport fishing in the pristine waters of Puerto Jiménez. Whether you're casting lines in the crystal-clear Pacific Ocean or exploring serene river systems, our waters offer exceptional opportunities for both novice and experienced anglers to catch prized game fish.",
-        "href": "/fishing"
+        "title": "Local Trail Hikes",
+        "body": "Explore the stunning natural beauty around Puerto Jiménez with guided hikes outside Corcovado National Park. Discover hidden waterfalls, spot local wildlife, and experience the rich biodiversity of the Osa Peninsula.",
+        "href": "/tours-and-activities#local-trails"
     },
     {
         "title": "Kayaking",
         "body": "Navigate through stunning mangrove forests and serene waterways in Puerto Jiménez's premier kayaking destinations. Our diverse network of rivers and protected coves offers both peaceful nature exploration and exciting adventures for paddlers of all skill levels.",
-        "href": "/kayaking"
+        "href": "/tours-and-activities#kayaking"
     },
     {
-        "title": "Snorkeling",
-        "body": "Dive into the vibrant underwater world of the Golfo Dulce, where crystal-clear waters reveal an extraordinary marine ecosystem. Swim alongside tropical fish, observe graceful sea turtles, and explore colorful coral reefs in one of Costa Rica's most pristine marine environments.",
-        "href": "/snorkeling"
+        "title": "Canopy Tour",
+        "body": "Soar through the rainforest canopy on exciting zip-line adventures. Experience the forest from a bird's eye view while enjoying stunning vistas of the Golfo Dulce and surrounding landscape.",
+        "href": "/tours-and-activities#canopy"
+    },
+    {
+        "title": "Gold Panning Tour",
+        "body": "Discover the fascinating history of gold panning in the Osa Peninsula. Learn traditional techniques and try your luck finding gold in local rivers while learning about the region's rich mining heritage.",
+        "href": "/tours-and-activities#gold"
     }
 ]
