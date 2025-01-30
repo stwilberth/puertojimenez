@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import ContainerFluid from '../../components/ContainerFluid.astro';
+---
+
+<Layout title="Message Sent Successfully - Puerto Jiménez">
+    <main>
+        <Nav />
+        <ContainerFluid>
+            <div class="max-w-4xl mx-auto py-12">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-emerald-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">Message Sent Successfully!</h1>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">Thank you for contacting us. We'll get back to you as soon as possible.</p>
+                    <a href="/" class="inline-block bg-emerald-600 text-white py-2 px-6 rounded-md hover:bg-emerald-700 transition-colors duration-300">
+                        Return to Home
+                    </a>
+                </div>
+            </div>
+        </ContainerFluid>
+    </main>
+</Layout>
