@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import Nav from '../components/Nav.astro';
+import ContainerFluid from '../components/ContainerFluid.astro';
+---
+
+<Layout title="Getting to Puerto Jimenez | Travel Guide">
+    <main class="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+        <Nav />
+        <section class="container mx-auto my-5">
+          <div class="text-center space-y-4">
+            <h1 class="text-4xl p-5 md:text-5xl font-bold bg-gradient-to-r from-green-600 to-green-400 dark:from-green-400 dark:to-green-300 bg-clip-text text-transparent animate-gradient">
+              Getting to Puerto Jiménez
+            </h1>
+
+            <div class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed font-lora mb-6 max-w-3xl mx-auto">
+              <p>
+                Puerto Jiménez is your gateway to <span class="font-bold text-green-600 dark:text-green-400">Corcovado National Park</span>, in Costa Rica, home to lush rainforests, exotic wildlife, and pristine beaches. Explore how to get here, top activities, and where to stay.
+              </p>
+            </div>
+          </div>
+        </section>
+      
+        
+        <ContainerFluid>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- By Plane Section -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-cyan-400 p-6 flex items-end">
+                        <span class="text-6xl">✈️</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h2 class="text-2xl font-bold text-gray-800 dark:text-white">By Plane</h2>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            Flying is the fastest and most convenient way to reach Puerto Jimenez. Several domestic airlines operate daily flights from San José International Airport (SJO).
+                        </p>
+                        <div class="space-y-4 border-t border-gray-100 dark:border-gray-700 pt-4">
+                            <div class="flex items-center space-x-3 group">
+                                <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">⏱️</span>
+                                <span class="text-gray-700 dark:text-gray-300">Flight duration: ~45 minutes</span>
+                            </div>
+                            <div class="flex items-center space-x-3 group">
+                                <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">💰</span>
+                                <span class="text-gray-700 dark:text-gray-300">Cost: $100-150 one way</span>
+                            </div>
+                            <div class="flex items-center space-x-3 group">
+                                <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">🎫</span>
+                                <span class="text-gray-700 dark:text-gray-300">Book through: Sansa or Skyway</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              <!-- By Bus Section -->
+              <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <div class="h-48 bg-gradient-to-r from-yellow-500 to-orange-400 p-6 flex items-end">
+                    <span class="text-6xl">🚌</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white">By Bus</h2>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Take the Transportes Blanco bus from San José directly to Puerto Jimenez, or choose the scenic route via Golfito with a beautiful ferry crossing.
+                    </p>
+                    <div class="space-y-4 border-t border-gray-100 dark:border-gray-700 pt-4">
+                        <div class="flex items-center space-x-3 group">
+                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">🚌</span>
+                            <span class="text-gray-700 dark:text-gray-300">Departs: 12:00 PM daily</span>
+                        </div>
+                        <div class="flex items-center space-x-3 group">
+                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">⏱️</span>
+                            <span class="text-gray-700 dark:text-gray-300">Journey: ~8 hours</span>
+                        </div>
+                        <div class="flex items-center space-x-3 group">
+                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">💰</span>
+                            <span class="text-gray-700 dark:text-gray-300">Cost: ₡12,000 ($24)</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <a href="/getting-puerto-jimenez-by-bus" class="inline-flex items-center px-6 py-3 bg-green-600 dark:bg-green-500 text-white rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transform hover:-translate-y-0.5 transition-all duration-300">
+                            Read More
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </ContainerFluid>
+
+        <!-- Maps Section -->
+        <ContainerFluid>
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8 text-center">Important Routes</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="https://maps.app.goo.gl/HpHUj2pKGpr5RTVs5" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="group">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                                🗺️
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-green-600 dark:text-green-400 group-hover:text-green-500 dark:group-hover:text-green-300 transition-colors">San José to Puerto Jiménez</h3>
+                                <p class="text-gray-600 dark:text-gray-400">View the complete route</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://maps.app.goo.gl/dSFLHQHPJRDkFnqZ7" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="group">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                                🚢
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-green-600 dark:text-green-400 group-hover:text-green-500 dark:group-hover:text-green-300 transition-colors">Rio Claro to Golfito Ferry</h3>
+                                <p class="text-gray-600 dark:text-gray-400">View the ferry route</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </ContainerFluid>
+    </main>
+</Layout>
+
+<style>
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 6s ease infinite;
+    }
+</style>

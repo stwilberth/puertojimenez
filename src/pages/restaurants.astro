@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import ContainerFluid from '../components/ContainerFluid.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+---
+
+<Layout title="Restaurants in Puerto Jiménez">
+    <main>
+        <Nav />
+        <ContainerFluid>
+            <section class="max-w-4xl mx-auto py-8">
+                <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-8">Where to Eat in Puerto Jiménez</h1>
+                
+                <div class="space-y-12">
+                    <!-- Local Cuisine -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Local Costa Rican Cuisine</h2>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Experience authentic Costa Rican flavors and traditional dishes.
+                            </p>
+                            <div class="space-y-4">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Popular Restaurants</h3>
+                                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                            <li>Soda Carolina</li>
+                                            <li>Restaurant Buenos Días</li>
+                                            <li>Soda Jiménez</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Must-Try Dishes</h3>
+                                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                            <li>Gallo Pinto</li>
+                                            <li>Casado</li>
+                                            <li>Fresh Seafood</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- International Options -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">International Restaurants</h2>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Diverse dining options featuring cuisine from around the world.
+                            </p>
+                            <div class="space-y-4">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Restaurants</h3>
+                                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                            <li>Il Giardino (Italian)</li>
+                                            <li>Jade Luna (Asian Fusion)</li>
+                                            <li>Pizza Mail (Italian)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cafes & Bars -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Cafes & Bars</h2>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Perfect spots for coffee, drinks, and light meals.
+                            </p>
+                            <div class="space-y-4">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Cafes</h3>
+                                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                            <li>Café de la Osa</li>
+                                            <li>Panadería Jiménez</li>
+                                            <li>Carolina's Café</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Bars</h3>
+                                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                            <li>Martina's Bar</li>
+                                            <li>Juanita's Bar</li>
+                                            <li>Beach Bar</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <CallToAction 
+                    title="Hungry for Local Flavors?"
+                    description="Discover the best dining spots in Puerto Jiménez"
+                    buttonText="Contact Us"
+                />
+            </section>
+        </ContainerFluid>
+    </main>
+</Layout>

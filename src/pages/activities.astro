@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import ContainerFluid from '../components/ContainerFluid.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+---
+
+<Layout title="Activities in Puerto Jiménez">
+    <main>
+        <Nav />
+        <ContainerFluid>
+            <section class="max-w-4xl mx-auto py-8">
+                <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-8 text-center">Activities in Puerto Jiménez 🌿🏝️</h1>
+                
+                <div class="space-y-12">
+                    <!-- Corcovado National Park -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group">
+                        <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-600 p-8 flex items-center justify-center">
+                            <span class="text-6xl group-hover:scale-110 transition-transform duration-300">🌿</span>
+                        </div>
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Explore Corcovado National Park</h2>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Hike and spot wildlife in one of the most biodiverse places on Earth. Home to countless species including:
+                            </p>
+                            <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 mt-2">
+                                <li>Jaguars and tapirs</li>
+                                <li>Scarlet macaws</li>
+                                <li>Four species of monkeys</li>
+                                <li>Hundreds of bird species</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Marine Life -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group">
+                        <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-600 p-8 flex items-center justify-center">
+                            <span class="text-6xl group-hover:scale-110 transition-transform duration-300">🐋</span>
+                        </div>
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Marine Life Adventures</h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Dolphin & Whale Watching</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Take boat tours to see marine life in their natural habitat</p>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Snorkeling & Diving</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Discover coral reefs in the Golfo Dulce</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Water Activities -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group">
+                        <div class="h-48 bg-gradient-to-br from-teal-500 to-blue-600 p-8 flex items-center justify-center">
+                            <span class="text-6xl group-hover:scale-110 transition-transform duration-300">🛶</span>
+                        </div>
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Water Activities</h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Kayaking</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Paddle through mangroves and crystal-clear waters</p>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Sport Fishing</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Catch sailfish, tuna, and mahi-mahi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Adventure Activities -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">More Adventures</h2>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                                <div class="text-center">
+                                    <span class="text-4xl mb-2 block">🏄‍♂️</span>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300">Surfing</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Perfect waves at Playa Matapalo</p>
+                                </div>
+                                <div class="text-center">
+                                    <span class="text-4xl mb-2 block">🌙</span>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300">Night Walks</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Discover nocturnal wildlife</p>
+                                </div>
+                                <div class="text-center">
+                                    <span class="text-4xl mb-2 block">💦</span>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300">Waterfalls</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Swim in natural pools</p>
+                                </div>
+                                <div class="text-center">
+                                    <span class="text-4xl mb-2 block">🌳</span>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300">Canopy Tours</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Zip-line adventures</p>
+                                </div>
+                                <div class="text-center">
+                                    <span class="text-4xl mb-2 block">🐎</span>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300">Horseback</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Beach & jungle trails</p>
+                                </div>
+                                <div class="text-center">
+                                    <span class="text-4xl mb-2 block">🍫</span>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300">Farm Tours</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Cacao & coffee farms</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <CallToAction 
+                    title="Ready for Adventure?"
+                    description="Contact us to book your perfect adventure in Puerto Jiménez"
+                    buttonText="Get Started"
+                />
+            </section>
+        </ContainerFluid>
+    </main>
+</Layout>

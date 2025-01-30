@@ -1,99 +1,107 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Nav from "../components/Nav.astro";
-import Container from "../components/Container.astro";
-import Slick from "../components/Slick.astro";
-import activities from "../data/activities.json";
-import guides from "../data/guides.json";
-import craftsman from "../data/craftsman.json";
-import hotels from "../data/hotels.json";
-import transportation from "../data/transportation.json";
-
-
-const gradient = "bg-white";
+import Layout from '../layouts/Layout.astro';
+import ContainerFluid from '../components/ContainerFluid.astro';
+import Nav from '../components/Nav.astro';
 ---
 
-<Layout title="Puerto Jiménez">
-  <main>
-    <Nav />
-    <Container>
-        <p class="text-gray-700 text-lg leading-relaxed font-lora">
-			<span class="font-bold text-green-600">The Puerto Jiménez</span> is a small town in the south of Costa Rica. It is a
-          beautiful place with a lot of nature and wildlife. This town is the
-          primary gateway to the <span class="font-bold text-green-600"
-            >Corcovado National Park</span
-          >, one of the most biodiverse places in the world.
-        </p>
-	</Container>
+<Layout title="Welcome to Puerto Jimenez">
+    <main>
+        <Nav />
+        <ContainerFluid>
+            <section class="text-center space-y-4">
+                <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-green-400 dark:from-green-400 dark:to-green-300 bg-clip-text text-transparent animate-gradient">
+                    Welcome to Puerto Jiménez
+                </h1>
+                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-4xl mx-auto">
+                      Your ultimate guide to Puerto Jiménez and Corcovado National Park! 🌿🐒
+                      Puerto Jiménez, the gateway to Corcovado National Park, is a paradise of lush rainforests, exotic wildlife, and stunning beaches. Whether you're looking for adventure, nature, or relaxation, we’ll show you how to get here, the best things to do, and where to stay.
+                      Plan your trip now and explore one of the most biodiverse places on Earth! ✨
+                </p>
+            </section>
+        </ContainerFluid>
+        
+        <ContainerFluid>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Getting Here Card -->
+                <a href="/getting-puerto-jimenez" class="group col-span-2 row-span-2 md:col-span-3 lg:col-span-4">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="h-35 bg-gradient-to-r from-blue-500 to-cyan-400 p-4 flex items-center justify-center">
+                            <span class="text-6xl">✈️</span>
+                        </div>
+                        <div class="p-6 text-center">
+                            <h2 class="text-3xl font-bold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Getting Here</h2>
+                            <p class="text-gray-600 dark:text-gray-400 text-lg mt-4">Plan your journey to paradise - Find the best routes by air, land, or sea</p>
+                        </div>
+                    </div>
+                </a>
 
-  <!-- how to get there -->
-  <Container>
-    <h2 class="text-2xl font-bold text-gray-800 mb-4">How to get there</h2>
-    <p class="text-gray-700 text-lg leading-relaxed font-lora">
-      The best way to get to Puerto Jiménez is by plane from Juan Santamaría International Airport in San José. You can also take a bus from San José to Puerto Jiménez.
-    </p>
-    <div class="flex justify-center">
-        <a href="/getting-here" class="text-green-600 font-bold">Read more</a>
-    </div>
-  </Container>
+                <!-- Activities Card -->
+                <a href="/activities" class="group">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        <div class="h-32 bg-gradient-to-r from-green-500 to-emerald-400 p-4 flex items-center justify-center">
+                            <span class="text-4xl">🌿</span>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h2 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Activities</h2>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Explore adventures</p>
+                        </div>
+                    </div>
+                </a>
 
-  <!-- the most important places around there -->
-  <Container>
-    <h2 class="text-2xl font-bold text-gray-800 mb-4">The most important places around there</h2>
-    <p class="text-gray-700 text-lg leading-relaxed font-lora">
-      Here you can find the most important places around Puerto Jiménez.
-    </p>
-  </Container>
-  <!-- Activities -->
-	<Container>
-		<Slick
-		  list={activities}
-		  title="Activities"
-		  background="bg-green-200"
-		  textColor="text-gray-800"
-		/>
-	</Container>
+                <!-- Accommodation Card -->
+                <a href="/accommodation" class="group">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        <div class="h-32 bg-gradient-to-r from-yellow-500 to-amber-400 p-4 flex items-center justify-center">
+                            <span class="text-4xl">🏠</span>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h2 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Accommodation</h2>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Find your perfect stay</p>
+                        </div>
+                    </div>
+                </a>
 
-	<Container>
-      <Slick
-        list={guides}
-        title="Guides"
-        background="bg-green-200"
-        textColor="text-gray-800"
-      />
-	</Container>
+                <!-- Tours Card -->
+                <a href="/tours" class="group">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        <div class="h-32 bg-gradient-to-r from-purple-500 to-violet-400 p-4 flex items-center justify-center">
+                            <span class="text-4xl">🦋</span>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h2 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Tours</h2>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Guided experiences</p>
+                        </div>
+                    </div>
+                </a>
 
-	<Container>
-      <Slick
-        list={craftsman}
-        title="Craftsman"
-        background="bg-green-200"
-        textColor="text-gray-800"
-      />
-    </Container>
+                <!-- Restaurants Card -->
+                <a href="/restaurants" class="group">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        <div class="h-32 bg-gradient-to-r from-red-500 to-rose-400 p-4 flex items-center justify-center">
+                            <span class="text-4xl">🍽️</span>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h2 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Restaurants</h2>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Local dining options</p>
+                        </div>
+                    </div>
+                </a>
 
-	<Container>
-		<Slick
-		  list={hotels}
-		  title="Hotels"
-		  background="bg-green-200"
-		  textColor="text-gray-800"
-		/>
-	</Container>
+            </div>
+        </ContainerFluid>
 
-	<Container>
-		<Slick
-		  list={transportation}
-		  title="Transportation"
-		  background="bg-green-200"
-		  textColor="text-gray-800"
-		/>
-	</Container>
-
-	<!-- add a footer -->
-	<footer class="text-center text-gray-500 text-sm mt-5 mb-5">
-		<p>PuertoJimenez.info &copy; 2024</p>
-		<p>Made with ❤️ by <a href="https://wilberth.com" class="mt-2 text-green-600">Wilberth.com</a></p>
-	</footer>
-  </main>
+    </main>
 </Layout>
+
+<style>
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 6s ease infinite;
+    }
+</style>

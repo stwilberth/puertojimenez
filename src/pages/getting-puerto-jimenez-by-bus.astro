@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import ContainerFluid from '../components/ContainerFluid.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<Layout title="Getting to Puerto Jimenez by Bus | Travel Guide">
+    <main class="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+        <Nav />
+        
+        <!-- Hero Section -->
+        <ContainerFluid>
+            <div class="text-center space-y-4 mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-green-400 dark:from-green-400 dark:to-green-300 bg-clip-text text-transparent animate-gradient">
+                    Getting to Puerto Jimenez by Bus
+                </h1>
+                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+                    A comprehensive guide to reach Puerto Jimenez using public transportation
+                </p>
+            </div>
+        </ContainerFluid>
+
+        <!-- Step 1: From Airport -->
+        <ContainerFluid>
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 mb-8">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="p-3 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">
+                        <span class="text-2xl">1</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white">From the Airport to San José</h2>
+                </div>
+                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                    <p>Take a TUASA bus from the airport bus stop to San José.</p>
+                    <div class="flex items-center space-x-3">
+                        <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">💰</span>
+                        <span>Cost: Approximately $6</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">🚏</span>
+                        <span>Bus stop is located right outside the airport</span>
+                    </div>
+                </div>
+            </div>
+        </ContainerFluid>
+
+        <!-- Step 2: Options from San José -->
+        <ContainerFluid>
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 mb-8">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="p-3 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">
+                        <span class="text-2xl">2</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white">From TUASA Terminal: Choose Your Route</h2>
+                </div>
+
+                <!-- Option 1 -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">Option 1: Direct Route</h3>
+                    <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                        <div class="flex items-center space-x-3">
+                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">🚕</span>
+                            <span>Take a taxi to Caribbean Bus Terminal (approximately $10)</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">🚌</span>
+                            <span>Take Transportes Blanco bus directly to Puerto Jiménez</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">⏰</span>
+                            <span>Departure time: 12:00 PM</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">💰</span>
+                            <span>Cost: approximately $17</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option 2 -->
+                <div>
+                    <h3 class="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">Option 2: Via Golfito</h3>
+                    <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                        <div class="flex items-center space-x-3">
+                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">🚕</span>
+                            <span>Take a taxi to Tracopa Bus Terminal ($12)</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">🚌</span>
+                            <span>Take a bus to Golfito or Rio Claro ($17)</span>
+                        </div>
+                        <p class="ml-11">Available routes:</p>
+                        <ul class="ml-11 space-y-2">
+                            <li class="flex items-center space-x-3">
+                                <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">🛣️</span>
+                                <span>Coastal Route (Ruta Costanera)</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">⛰️</span>
+                                <span>Mountain Route (Ruta Cerro)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </ContainerFluid>
+
+        <!-- Step 3: Final Leg -->
+        <ContainerFluid>
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 mb-8">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="p-3 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">
+                        <span class="text-2xl">3</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Final Leg - Ferry Service</h2>
+                </div>
+                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                    <div class="flex items-center space-x-3">
+                        <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">🚌</span>
+                        <span>From Rio Claro, take a bus to Golfito Ferry Terminal ($3)</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">⛴️</span>
+                        <span>Take the ferry to Puerto Jiménez ($14)</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400">ℹ️</span>
+                        <span>Multiple departures daily (limited capacity)</span>
+                    </div>
+                </div>
+            </div>
+        </ContainerFluid>
+
+        <!-- Maps Section -->
+        <ContainerFluid>
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8 text-center">Route Maps</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="https://maps.app.goo.gl/HpHUj2pKGpr5RTVs5" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="group">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                                🗺️
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-green-600 dark:text-green-400 group-hover:text-green-500 dark:group-hover:text-green-300 transition-colors">Coastal Route Map</h3>
+                                <p class="text-gray-600 dark:text-gray-400">View the coastal route from San José to Rio Claro</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://maps.app.goo.gl/xjzS5QsACZVSCTa58" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="group">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                                🚢
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-green-600 dark:text-green-400 group-hover:text-green-500 dark:group-hover:text-green-300 transition-colors">Rio Claro to Golfito Route</h3>
+                                <p class="text-gray-600 dark:text-gray-400">View the route from Rio Claro to Golfito Ferry Terminal</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </ContainerFluid>
+    </main>
+</Layout>
+
+<style>
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 6s ease infinite;
+    }
+</style>

@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import ContainerFluid from '../components/ContainerFluid.astro';
+import CallToAction from '../components/CallToAction.astro';
+---
+
+<Layout title="Local Artisans - Puerto Jiménez">
+    <main>
+        <Nav />
+        <ContainerFluid>
+            <section class="max-w-4xl mx-auto py-8">
+                <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-8 text-center">Local Artisans & Crafts 🎨</h1>
+                
+                <div class="space-y-12">
+                    <!-- Introducción -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Puerto Jiménez is home to talented artisans who create unique pieces inspired by the rich biodiversity 
+                                and cultural heritage of the Osa Peninsula. From traditional crafts to contemporary art, discover the 
+                                authentic creations of our local artists.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tipos de Artesanías -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Types of Crafts</h2>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <div class="flex items-center mb-4">
+                                        <span class="text-3xl mr-4">🪵</span>
+                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Wood Crafts</h3>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                        Beautiful pieces carved from local sustainable woods, including:
+                                    </p>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                        <li>Decorative bowls and plates</li>
+                                        <li>Animal sculptures</li>
+                                        <li>Furniture pieces</li>
+                                        <li>Jewelry boxes</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="flex items-center mb-4">
+                                        <span class="text-3xl mr-4">💎</span>
+                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Jewelry</h3>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                        Handmade jewelry using local and natural materials:
+                                    </p>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                        <li>Coconut shell jewelry</li>
+                                        <li>Seed bead necklaces</li>
+                                        <li>Shell bracelets</li>
+                                        <li>Natural stone pendants</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Textiles y Más -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <div class="flex items-center mb-4">
+                                        <span class="text-3xl mr-4">🧵</span>
+                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Textiles</h3>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                        Traditional and contemporary textile crafts:
+                                    </p>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                        <li>Hand-woven bags</li>
+                                        <li>Embroidered clothing</li>
+                                        <li>Natural dyed fabrics</li>
+                                        <li>Traditional tapestries</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="flex items-center mb-4">
+                                        <span class="text-3xl mr-4">🎨</span>
+                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Paintings & Art</h3>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                        Local artists capturing the beauty of Osa:
+                                    </p>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                        <li>Wildlife paintings</li>
+                                        <li>Landscape photography</li>
+                                        <li>Mixed media art</li>
+                                        <li>Nature-inspired prints</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dónde Encontrar -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Where to Find Local Crafts</h2>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Local Markets</h3>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                        <li>Weekend Artisan Market</li>
+                                        <li>Local craft shops</li>
+                                        <li>Beach vendors</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Artist Studios</h3>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                        <li>Visit local workshops</li>
+                                        <li>Meet the artisans</li>
+                                        <li>Custom orders available</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <CallToAction 
+                    title="Support Local Artisans"
+                    description="Contact us to connect with local artisans or find specific crafts"
+                    buttonText="Contact Now"
+                />
+            </section>
+        </ContainerFluid>
+    </main>
+</Layout>

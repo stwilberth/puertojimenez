@@ -1,5 +1,107 @@
-<nav class="bg-gradient-to-r from-emerald-800 to-emerald-700 p-4 shadow-lg">
-	<div class="container mx-auto flex justify-between items-center">
-		<h1 class="text-white text-2xl font-bold ml-4">Puerto Jiménez</h1>
-	</div>
+---
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="bg-white dark:bg-gray-800 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/" class="text-emerald-600 dark:text-green-400 text-2xl font-bold hover:text-emerald-700 dark:hover:text-green-300 transition-colors duration-300">
+                        PuertoJiménez.info
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:flex md:items-center md:space-x-6">
+                <a href="/" class={`text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-green-400 transition-colors duration-300 ${currentPath === "/" ? "text-emerald-600 dark:text-green-400" : ""}`}>Home</a>
+                <a href="/getting-puerto-jimenez" class={`text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-green-400 transition-colors duration-300 ${currentPath === "/getting-puerto-jimenez" ? "text-emerald-600 dark:text-green-400" : ""}`}>Getting Here</a>
+                <a href="/artisans" class={`text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-green-400 transition-colors duration-300 ${currentPath === "/artisans" ? "text-emerald-600 dark:text-green-400" : ""}`}>Artisans</a>
+                <a href="/contact" class={`text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-green-400 transition-colors duration-300 ${currentPath === "/contact" ? "text-emerald-600 dark:text-green-400" : ""}`}>Contact</a>
+                <button id="theme-toggle" class="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-green-400 transition-colors duration-300">
+                    <span class="dark:hidden">🌙</span>
+                    <span class="hidden dark:inline">☀️</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </nav>
+
+<script is:inline>
+    // Función para alternar el tema
+    function toggleTheme() {
+        const theme = localStorage.getItem('theme')
+        if (theme === 'dark') {
+            document.documentElement.classList.remove('dark')
+            localStorage.setItem('theme', 'light')
+        } else {
+            document.documentElement.classList.add('dark')
+            localStorage.setItem('theme', 'dark')
+        }
+        updateIcon()
+    }
+
+    // Función para actualizar el icono según el tema
+    function updateIcon() {
+        const darkIcon = document.querySelector('#theme-toggle .dark\\:inline')
+        const lightIcon = document.querySelector('#theme-toggle .dark\\:hidden')
+        
+        if (document.documentElement.classList.contains('dark')) {
+            darkIcon.classList.remove('hidden')
+            lightIcon.classList.add('hidden')
+        } else {
+            lightIcon.classList.remove('hidden')
+            darkIcon.classList.add('hidden')
+        }
+    }
+
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+        const navLinks = document.getElementById('nav-links')
+        navLinks.classList.toggle('hidden')
+    }
+
+    // Esperar a que el DOM esté listo
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle')
+        const mobileMenuButton = document.getElementById('mobile-menu-button')
+        
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme)
+        }
+        
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', toggleMobileMenu)
+        }
+        
+        // Actualizar icono inicial
+        updateIcon()
+    })
+</script>
+
+<style>
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #059669;
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        #nav-links:not(.hidden) {
+            padding: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+    }
+</style>

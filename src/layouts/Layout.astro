@@ -1,4 +1,6 @@
 ---
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 interface Props {
 	title: string;
 }
@@ -17,7 +19,23 @@ const { title } = Astro.props;
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 		<title>{title}</title>
 	</head>
-	<body class="bg-gray-300">
+	<body class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 flex flex-col">
 		<slot />
+		<Footer />
+		<WhatsAppButton />
+		<script is:inline>
+			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+			if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+				document.documentElement.classList.add('dark')
+			} else {
+				document.documentElement.classList.remove('dark')
+			}
+		</script>
 	</body>
 </html>
+
+<style>
+	:root {
+		color-scheme: light dark;
+	}
+</style>

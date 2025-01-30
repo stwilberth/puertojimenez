@@ -1,11 +1,11 @@
 ---
 import Card from "./Card.astro";
 
-const { list, title, background = "bg-green-200", textColor = "text-gray-800" } = Astro.props;
+const { list, title } = Astro.props;
 ---
 <div class="">
   <!-- Slider Container -->
-  <h2 class="text-2xl text-green-800 font-bold mb-3">{title}</h2>
+  <h2 class="text-2xl text-gray-900 dark:text-white font-bold mb-3">{title}</h2>
   <div class="flex flex-row overflow-x-auto gap-4 py-5 snap-x snap-mandatory scrollbar-hide">
     <!-- Slides -->
     {
@@ -15,10 +15,7 @@ const { list, title, background = "bg-green-200", textColor = "text-gray-800" } 
             image={item.image}
             body={item.body}
             whatsapp={item.whatsapp}
-            background={background}
-            textColor={textColor}
           />
-
       ))
     }
   </div>
@@ -43,5 +40,4 @@ const { list, title, background = "bg-green-200", textColor = "text-gray-800" } 
 .flex-row::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
 </style>

@@ -5,8 +5,6 @@ interface Props {
   href?: string;
   image?: string;
   whatsapp?: string;
-  background?: string;
-  textColor?: string;
 }
 
 const {
@@ -14,46 +12,39 @@ const {
   title,
   body,
   image = "/images/default.jpg",
-  whatsapp,
-  background = "bg-green-200",
-  textColor = "text-gray-800",
+  whatsapp
 } = Astro.props;
 ---
 
 <div
-  class={`relative min-w-[300px] md:min-w-[400px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden ${background} transition-transform transform hover:scale-105`}
+  class="relative min-w-[300px] md:min-w-[400px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105"
 >
   {
     image && (
       <img
         src={image}
         alt={title}
-        class="object-cover"
+        class="object-cover w-full h-48"
       />
     )
   }
 
   <div class="p-4">
     <a href={href}>
-      <h3
-        class={`mb-4 text-lg font-bold tracking-tight text-green-600 dark:text-white ${textColor}`}
-      >
+      <h3 class="mb-4 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
         {title}
       </h3>
     </a>
-    <p class={`mb-4 font-normal text-sm md:text-base text-gray-700 dark:text-gray-400 ${textColor}`}>
+    <p class="mb-4 font-normal text-sm md:text-base text-gray-600 dark:text-gray-300">
       {body}
     </p>
     {
       whatsapp && (
         <a
           href={`https://wa.me/${whatsapp}`}
-          class="absolute bottom-4 right-4 inline-flex items-center px-3 py-2 text-xs font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Contact on WhatsApp"
+          class="absolute bottom-4 right-4 inline-flex items-center px-3 py-2 text-xs font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-800 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
         >
-          WhatsApp
+          <span>WhatsApp</span>
         </a>
       )
     }

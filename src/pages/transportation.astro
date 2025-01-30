@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import ContainerFluid from '../components/ContainerFluid.astro';
+import CallToAction from '../components/CallToAction.astro';
+---
+
+<Layout title="Transportation in Puerto Jiménez">
+    <main>
+        <Nav />
+        <ContainerFluid>
+            <section class="max-w-4xl mx-auto py-8">
+                <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-8 text-center">Transportation Options 🚗</h1>
+                
+                <div class="space-y-12">
+                    <!-- Local Transportation -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Local Transportation</h2>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <div class="flex items-center mb-4">
+                                        <span class="text-3xl mr-4">🚕</span>
+                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Taxis</h3>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                        Local taxis are readily available in Puerto Jiménez. They're a convenient way to get around town and to nearby beaches.
+                                    </p>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                        <li>24/7 service available</li>
+                                        <li>Fixed rates to popular destinations</li>
+                                        <li>Both official red taxis and local "pirate" taxis</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="flex items-center mb-4">
+                                        <span class="text-3xl mr-4">🚲</span>
+                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Bike Rentals</h3>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                        Bicycles are a popular way to explore the town and nearby areas. Several shops offer rentals.
+                                    </p>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                        <li>Daily and weekly rates</li>
+                                        <li>Mountain bikes available</li>
+                                        <li>Helmets and locks included</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Rentals -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center mb-6">
+                                <span class="text-3xl mr-4">🚙</span>
+                                <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Car Rentals</h2>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                Renting a car gives you the freedom to explore the Osa Peninsula at your own pace. 4x4 vehicles are recommended for most areas.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Local Rental Agencies</h3>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                        <li>Solid Car Rental</li>
+                                        <li>Adobe Rent a Car</li>
+                                        <li>Economy Car Rental</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Vehicle Types</h3>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                        <li>4x4 SUVs</li>
+                                        <li>Pickup trucks</li>
+                                        <li>ATVs (for specific areas)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tour Transportation -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center mb-6">
+                                <span class="text-3xl mr-4">🚐</span>
+                                <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Tour Transportation</h2>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                Many tours include transportation from your hotel to the activity location.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Services Include</h3>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                        <li>Hotel pickup and drop-off</li>
+                                        <li>Air-conditioned vehicles</li>
+                                        <li>Professional drivers</li>
+                                        <li>Group and private options</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Popular Destinations</h3>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                        <li>Corcovado National Park</li>
+                                        <li>Matapalo Beach</li>
+                                        <li>Golfo Dulce tours</li>
+                                        <li>Waterfall excursions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <CallToAction 
+                    title="Need Transportation?"
+                    description="Let us help you arrange your transportation in Puerto Jiménez"
+                    buttonText="Contact Us"
+                />
+            </section>
+        </ContainerFluid>
+    </main>
+</Layout>

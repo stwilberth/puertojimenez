@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import ContainerFluid from '../components/ContainerFluid.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+---
+
+<Layout title="Tours in Puerto Jiménez">
+    <main>
+        <Nav />
+        <ContainerFluid>
+            <section class="max-w-4xl mx-auto py-8">
+                <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-8">Tours in Puerto Jiménez</h1>
+                
+                <div class="space-y-12">
+                    <!-- Corcovado Tours -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Corcovado National Park Tours</h2>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Experience the incredible biodiversity of Corcovado National Park with our expert guides.
+                            </p>
+                            <div class="space-y-4">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Available Tours</h3>
+                                <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                    <li>Day Hikes</li>
+                                    <li>Multi-day Adventures</li>
+                                    <li>Wildlife Photography Tours</li>
+                                    <li>Sirena Station Expeditions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Water Tours -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Water Tours</h2>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Explore the beautiful Golfo Dulce and its marine life.
+                            </p>
+                            <div class="space-y-4">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Popular Options</h3>
+                                <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                    <li>Dolphin & Whale Watching</li>
+                                    <li>Mangrove Kayaking</li>
+                                    <li>Sport Fishing</li>
+                                    <li>Snorkeling Adventures</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Special Tours -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Specialty Tours</h2>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Unique experiences in and around Puerto Jiménez.
+                            </p>
+                            <div class="space-y-4">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Featured Tours</h3>
+                                <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                    <li>Night Wildlife Tours</li>
+                                    <li>Bird Watching Expeditions</li>
+                                    <li>Cultural & Community Tours</li>
+                                    <li>Chocolate Farm Tours</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <CallToAction 
+                    title="Ready to Explore?"
+                    description="Book your guided tours in Puerto Jiménez with local experts"
+                    buttonText="Book a Tour"
+                />
+            </section>
+        </ContainerFluid>
+    </main>
+</Layout>
