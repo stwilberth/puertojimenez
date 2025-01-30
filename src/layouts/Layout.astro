@@ -1,8 +1,10 @@
 ---
-import Footer from '../components/Footer.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import GoogleTagManager from "../components/GoogleTagManager.astro";
+
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -10,32 +12,54 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Information about the town of Puerto Jiménez, Costa Rica for tourists" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/ico" href="/images/favicon.ico" />
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-		<title>{title}</title>
-	</head>
-	<body class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 text-gray-900 dark:text-white transition-colors duration-300 flex flex-col">
-		<slot />
-		<Footer />
-		<WhatsAppButton />
-		<script is:inline>
-			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
-			if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-				document.documentElement.classList.add('dark')
-			} else {
-				document.documentElement.classList.remove('dark')
-			}
-		</script>
-	</body>
+  <head>
+    <GoogleTagManager />
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Information about the town of Puerto Jiménez, Costa Rica for tourists"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/ico" href="/images/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 text-gray-900 dark:text-white transition-colors duration-300 flex flex-col"
+  >
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-W8ZK52MD"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <slot />
+    <Footer />
+    <WhatsAppButton />
+    <script is:inline>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </body>
 </html>
 
 <style>
-	:root {
-		color-scheme: light dark;
-	}
+  :root {
+    color-scheme: light dark;
+  }
 </style>
