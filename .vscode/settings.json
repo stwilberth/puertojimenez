@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "node_modules": true,
+        ".astro": true,
+        ".vscode": true,
+        "package.json": true,
+        "package-lock.json": true,
+        ".gitignore": true,
+        "pnpm-lock.yaml": true,
+        "README.md": true,
+        "tsconfig.json": true
+    }
+}
