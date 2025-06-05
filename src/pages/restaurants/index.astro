@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContainerFluid from '../../components/ContainerFluid.astro';
+import Nav from '../../components/Nav.astro';
+import { getCollection } from 'astro:content';
+
+// Obtener todos los restaurantes de la colección
+const restaurants = await getCollection('restaurants');
+---
+
+<Layout title="Restaurantes en Puerto Jiménez">
+    <main>
+        <Nav />
+        <ContainerFluid>
+            <section class="text-center space-y-4 mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 dark:from-orange-400 dark:to-orange-300 bg-clip-text text-transparent animate-gradient">
+                    Restaurantes en Puerto Jiménez
+                </h1>
+                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-4xl mx-auto">
+                    Descubre los mejores lugares para disfrutar de la gastronomía local y sabores únicos de la Península de Osa.
+                </p>
+            </section>
+        </ContainerFluid>
+        
+        <ContainerFluid>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {restaurants.map((restaurant) => (
+                    <a href={`/restaurants/${restaurant.slug}`} class="group">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                            <div class="h-32 bg-gradient-to-r from-orange-500 to-amber-400 p-4 flex items-center justify-center">
+                                <span class="text-4xl">🍽️</span>
+                            </div>
+                            <div class="p-6">
+                                <h2 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                                    {restaurant.data.title.split(':')[0]}
+                                </h2>
+                                <p class="text-gray-600 dark:text-gray-400 mt-2">
+                                    {restaurant.data.description}
+                                </p>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    {restaurant.data.tags.slice(0, 3).map((tag) => (
+                                        <span class="px-2 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-100 text-xs rounded-full">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                ))}
+            </div>
+        </ContainerFluid>
+    </main>
+</Layout>
