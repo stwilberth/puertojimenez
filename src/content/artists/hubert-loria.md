@@ -4,7 +4,7 @@ description: "Artist and coordinator of local art projects in Puerto Jiménez."
 experience: "Multiple years of experience in local art and community coordination."
 email: "hubertloria@gmail.com"
 specialty: ["Art Coordination", "Community Projects"]
-image: "../../assets/hubert_loria.jpeg"
+image: "../../assets/hubert_loria.jpg"
 productsImage: "../../assets/hubert_loria_products.jpeg"
 ---
 

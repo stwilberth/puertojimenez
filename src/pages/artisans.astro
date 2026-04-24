@@ -6,7 +6,7 @@ import CallToAction from '../components/CallToAction.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 
-const artists = await getCollection('artists');
+const artists = (await getCollection('artists')).sort((a, b) => b.data.name.localeCompare(a.data.name));
 ---
 
 <Layout title="Local Artisans & Artists - Puerto Jiménez">
