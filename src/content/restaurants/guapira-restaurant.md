@@ -4,7 +4,6 @@ description: "Discover Guapira Restaurant, a dining gem near Lapa Rios Lodge in 
 pubDate: "2025-03-28"
 author: "Your Name"
 tags: ["restaurant", "Costa Rica", "Osa Peninsula", "dining", "sustainable"]
-layout: "../../layouts/Layout.astro" # Adjust path to your Astro layout
 ---
 
 # Guapira Restaurant: A Taste of Costa Rica’s Osa Peninsula

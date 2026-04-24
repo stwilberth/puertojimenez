@@ -10,11 +10,25 @@ const restaurantsCollection = defineCollection({
     pubDate: z.string(),
     author: z.string(),
     tags: z.array(z.string()),
-    layout: z.string().optional(),
+  }),
+});
+
+// Define el esquema para la colección de artistas
+const artistsCollection = defineCollection({
+  type: 'content',
+  schema: ({ image }) => z.object({
+    name: z.string(),
+    description: z.string(),
+    experience: z.string(),
+    email: z.string().email().optional(),
+    specialty: z.array(z.string()),
+    image: image().optional(),
+    productsImage: image().optional(),
   }),
 });
 
 // Exporta las colecciones
 export const collections = {
   'restaurants': restaurantsCollection,
+  'artists': artistsCollection,
 };

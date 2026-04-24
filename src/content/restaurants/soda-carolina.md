@@ -4,7 +4,6 @@ description: "Enjoy genuine traditional Costa Rican cuisine at Soda Carolina, a 
 pubDate: "2025-03-25"
 author: "Your Name"
 tags: ["restaurant", "Costa Rica", "Puerto Jiménez", "local cuisine", "traditional"]
-layout: "../../layouts/Layout.astro"
 ---
 
 # Soda Carolina: Authentic Costa Rican Cuisine in Puerto Jiménez
