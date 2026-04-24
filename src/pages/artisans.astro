@@ -10,95 +10,163 @@ const artists = await getCollection('artists');
 ---
 
 <Layout title="Local Artisans & Artists - Puerto Jiménez">
-    <main class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <main class="bg-slate-50 dark:bg-slate-950 min-h-screen font-sans">
         <Nav />
-        <ContainerFluid>
-            <section class="max-w-6xl mx-auto py-12 px-4">
-                <div class="text-center mb-16">
-                    <h1 class="text-5xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
-                        Local Artisans & Artists <span class="text-orange-500">🎨</span>
+        
+        <div class="relative py-20 overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-10 dark:opacity-20 pointer-events-none">
+                <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-orange-400 rounded-full blur-[120px]"></div>
+                <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-emerald-400 rounded-full blur-[120px]"></div>
+            </div>
+
+            <ContainerFluid>
+                <div class="max-w-5xl mx-auto text-center relative z-10">
+                    <h1 class="text-6xl md:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter italic">
+                        ARTISANS <span class="text-orange-500 not-italic">🎨</span>
                     </h1>
-                    <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        Discover the creative heartbeat of Puerto Jiménez. Our local artists transform the essence of the Osa Peninsula into unique masterpieces.
+                    <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                        Meet the creators who turn the soul of the Osa Peninsula into timeless art. 
+                        Every piece tells a story of tradition, nature, and passion.
                     </p>
                 </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-                    {artists.map((artist) => (
-                        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 flex flex-col">
-                            <div class="relative h-80 overflow-hidden">
-                                {artist.data.image && (
-                                    <Image 
-                                        src={artist.data.image} 
-                                        alt={artist.data.name}
-                                        width={800}
-                                        height={600}
-                                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                                    />
-                                )}
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                                    <div>
-                                        <h2 class="text-3xl font-bold text-white mb-1">{artist.data.name}</h2>
-                                        <div class="flex flex-wrap gap-2">
-                                            {artist.data.specialty.map(spec => (
-                                                <span class="px-3 py-1 bg-orange-500 text-white text-xs font-semibold rounded-full uppercase tracking-wider">
-                                                    {spec}
-                                                </span>
-                                            ))}
-                                        </div>
+            </ContainerFluid>
+        </div>
+
+        <ContainerFluid>
+            <div class="max-w-6xl mx-auto pb-32">
+                <div class="grid grid-cols-1 gap-24">
+                    {artists.map((artist, index) => (
+                        <div class={`flex flex-col lg:items-center gap-12 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                            <!-- Slider Section -->
+                            <div class="w-full lg:w-3/5 group relative">
+                                <div class="swiper artisan-swiper rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white dark:border-slate-800 aspect-[4/3] md:aspect-[16/10]">
+                                    <div class="swiper-wrapper">
+                                        {artist.data.image && (
+                                            <div class="swiper-slide">
+                                                <Image 
+                                                    src={artist.data.image} 
+                                                    alt={artist.data.name}
+                                                    width={1200}
+                                                    height={800}
+                                                    class="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                        )}
+                                        {artist.data.productsImage && (
+                                            <div class="swiper-slide">
+                                                <Image 
+                                                    src={artist.data.productsImage} 
+                                                    alt={`${artist.data.name}'s work`}
+                                                    width={1200}
+                                                    height={800}
+                                                    class="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                        )}
                                     </div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-next !text-white !w-12 !h-12 after:!text-xl bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full transition-all opacity-0 group-hover:opacity-100"></div>
+                                    <div class="swiper-button-prev !text-white !w-12 !h-12 after:!text-xl bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full transition-all opacity-0 group-hover:opacity-100"></div>
+                                </div>
+                                
+                                <!-- Floating Badge -->
+                                <div class="absolute -bottom-6 -right-6 md:right-10 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl z-20 border border-slate-100 dark:border-slate-700 hidden md:block">
+                                    <div class="text-xs font-bold text-orange-500 uppercase tracking-widest mb-1">Experience</div>
+                                    <div class="text-xl font-bold dark:text-white">{artist.data.experience}</div>
                                 </div>
                             </div>
-                            
-                            <div class="p-8 flex-grow flex flex-col">
-                                <p class="text-gray-600 dark:text-gray-300 mb-6 text-lg italic">
-                                    "{artist.data.description}"
-                                </p>
-                                
-                                <div class="space-y-4 mb-8">
-                                    <div class="flex items-center text-gray-700 dark:text-gray-400">
-                                        <span class="w-8 h-8 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-lg mr-3">🕒</span>
-                                        <span class="font-medium">{artist.data.experience}</span>
+
+                            <!-- Content Section -->
+                            <div class="w-full lg:w-2/5 space-y-8">
+                                <div class="space-y-4">
+                                    <div class="flex flex-wrap gap-2">
+                                        {artist.data.specialty.map(spec => (
+                                            <span class="px-4 py-1.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold rounded-full uppercase tracking-widest border border-emerald-200 dark:border-emerald-800">
+                                                {spec}
+                                            </span>
+                                        ))}
                                     </div>
-                                    {artist.data.email && (
-                                        <div class="flex items-center text-gray-700 dark:text-gray-400">
-                                            <span class="w-8 h-8 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-lg mr-3">✉️</span>
-                                            <a href={`mailto:${artist.data.email}`} class="hover:text-orange-500 transition-colors">
-                                                {artist.data.email}
-                                            </a>
-                                        </div>
-                                    )}
+                                    <h2 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-none">
+                                        {artist.data.name}
+                                    </h2>
                                 </div>
 
-                                {artist.data.productsImage && (
-                                        <div class="mt-auto">
-                                            <p class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Work Showcase</p>
-                                            <div class="rounded-2xl overflow-hidden h-48 border-4 border-gray-100 dark:border-gray-700">
-                                            <Image 
-                                                src={artist.data.productsImage} 
-                                                alt={`${artist.data.name}'s work`}
-                                                width={600}
-                                                height={400}
-                                                class="w-full h-full object-cover"
-                                            />
+                                <div class="relative">
+                                    <span class="absolute -top-4 -left-4 text-6xl text-slate-200 dark:text-slate-800 font-serif leading-none opacity-50">"</span>
+                                    <p class="text-xl text-slate-600 dark:text-slate-400 italic relative z-10 pl-4 border-l-4 border-orange-500">
+                                        {artist.data.description}
+                                    </p>
+                                </div>
+
+                                <div class="pt-6 space-y-6">
+                                    {artist.data.email && (
+                                        <a href={`mailto:${artist.data.email}`} class="inline-flex items-center group">
+                                            <div class="w-12 h-12 flex items-center justify-center bg-orange-100 dark:bg-orange-900/20 text-orange-600 rounded-xl mr-4 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg shadow-orange-500/10">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                                </svg>
                                             </div>
-                                        </div>
+                                            <div>
+                                                <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Inquiries</div>
+                                                <div class="text-lg font-bold text-slate-700 dark:text-slate-300 group-hover:text-orange-500 transition-colors">{artist.data.email}</div>
+                                            </div>
+                                        </a>
                                     )}
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <CallToAction 
-                    title="Support Local Talent"
-                    description="Interested in a custom piece or visiting a studio? We can help you connect with these amazing creators."
-                    buttonText="Get in Touch"
-                />
-            </section>
+                <div class="mt-32">
+                    <CallToAction 
+                        title="Support Our Local Economy"
+                        description="Direct contact with artists ensures they receive fair value for their work. Let's keep the art alive."
+                        buttonText="Contact Support"
+                    />
+                </div>
+            </div>
         </ContainerFluid>
     </main>
+
+    <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script is:inline>
+        new Swiper('.artisan-swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            autoplay: {
+                delay: 5000,
+            },
+        });
+    </script>
 </Layout>
 
 <style>
-    .tracking-tight { letter-spacing: -0.025em; }
+    .artisan-swiper :global(.swiper-pagination-bullet) {
+        width: 12px;
+        height: 12px;
+        background: white;
+        opacity: 0.5;
+        transition: all 0.3s ease;
+    }
+    .artisan-swiper :global(.swiper-pagination-bullet-active) {
+        opacity: 1;
+        width: 32px;
+        border-radius: 6px;
+        background: #f97316; /* orange-500 */
+    }
 </style>
+

@@ -5,103 +5,119 @@ import Nav from '../components/Nav.astro';
 ---
 
 <Layout title="Welcome to Puerto Jimenez">
-    <main>
+    <main class="bg-slate-50 dark:bg-slate-950 min-h-screen">
         <Nav />
-        <ContainerFluid>
-            <section class="text-center space-y-4">
-                <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-green-400 dark:from-green-400 dark:to-green-300 bg-clip-text text-transparent animate-gradient">
-                    Welcome to Puerto Jiménez
-                </h1>
-                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-4xl mx-auto">
-                      Your ultimate guide to Puerto Jiménez and Corcovado National Park! 🌿🐒
-                      Puerto Jiménez, the gateway to Corcovado National Park, is a paradise of lush rainforests, exotic wildlife, and stunning beaches. Whether you're looking for adventure, nature, or relaxation, we’ll show you how to get here, the best things to do, and where to stay.
-                      Plan your trip now and explore one of the most biodiverse places on Earth! ✨
-                </p>
-            </section>
-        </ContainerFluid>
+        
+        <div class="relative py-24 overflow-hidden">
+            <!-- Decorative Blobs -->
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-green-400/20 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-400/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <ContainerFluid>
+                <section class="text-center space-y-8 relative z-10">
+                    <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-slate-900 dark:text-white">
+                        PUERTO <span class="text-green-500">JIMENEZ</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium">
+                        Your ultimate guide to the gateway of Corcovado National Park. 🌿🐒
+                        Explore the most biodiverse place on Earth where the rainforest meets the sea.
+                    </p>
+                </section>
+            </ContainerFluid>
+        </div>
         
         <ContainerFluid>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Getting Here Card -->
-                <a href="/getting-puerto-jimenez" class="group col-span-2 row-span-2 md:col-span-3 lg:col-span-4">
-                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
-                        <div class="h-35 bg-gradient-to-r from-blue-500 to-cyan-400 p-4 flex items-center justify-center">
-                            <span class="text-6xl">✈️</span>
+            <div class="max-w-6xl mx-auto pb-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+                    <!-- Getting Here Card - Large -->
+                    <a href="/getting-puerto-jimenez" class="group lg:col-span-4 lg:row-span-2">
+                        <div class="relative h-full bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-cyan-500/10 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="p-10 flex flex-col h-full relative z-10">
+                                <div class="w-20 h-20 bg-blue-500 rounded-3xl flex items-center justify-center text-4xl shadow-lg shadow-blue-500/20 mb-8 group-hover:scale-110 transition-transform duration-500">
+                                    ✈️
+                                </div>
+                                <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-4 group-hover:text-blue-500 transition-colors">Getting Here</h2>
+                                <p class="text-xl text-slate-600 dark:text-slate-400">Plan your journey by air, land, or sea. All roads lead to paradise.</p>
+                                <div class="mt-auto pt-10">
+                                    <span class="inline-flex items-center text-blue-500 font-bold tracking-widest uppercase text-sm">
+                                        Explore Routes 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="p-6 text-center">
-                            <h2 class="text-3xl font-bold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Getting Here</h2>
-                            <p class="text-gray-600 dark:text-gray-400 text-lg mt-4">Plan your journey to paradise - Find the best routes by air, land, or sea</p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
 
-                <!-- Activities Card -->
-                <a href="/activities" class="group">
-                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                        <div class="h-32 bg-gradient-to-r from-green-500 to-emerald-400 p-4 flex items-center justify-center">
-                            <span class="text-4xl">🌿</span>
+                    <!-- Tours & Activities - Vertical -->
+                    <a href="/activities" class="group lg:col-span-2 lg:row-span-2">
+                        <div class="relative h-full bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
+                            <div class="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-500/10 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="p-10 flex flex-col h-full relative z-10">
+                                <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-green-500/20 mb-6 group-hover:scale-110 transition-transform duration-500">
+                                    🌿
+                                </div>
+                                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-3">Tours & Activities</h2>
+                                <p class="text-slate-600 dark:text-slate-400">Guided wildlife treks and mangrove adventures.</p>
+                            </div>
                         </div>
-                        <div class="p-4 text-center">
-                            <h2 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Activities</h2>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Explore adventures</p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
 
-                <!-- Accommodation Card -->
-                <a href="/accommodation" class="group">
-                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                        <div class="h-32 bg-gradient-to-r from-yellow-500 to-amber-400 p-4 flex items-center justify-center">
-                            <span class="text-4xl">🏠</span>
+                    <!-- Artisans - Square -->
+                    <a href="/artisans" class="group lg:col-span-2">
+                        <div class="relative h-64 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
+                            <div class="absolute inset-0 bg-gradient-to-br from-orange-600/10 to-amber-500/10 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="p-8 flex flex-col h-full relative z-10">
+                                <div class="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-orange-500/20 mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    🎨
+                                </div>
+                                <h2 class="text-2xl font-black text-slate-900 dark:text-white">Artisans</h2>
+                            </div>
                         </div>
-                        <div class="p-4 text-center">
-                            <h2 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Accommodation</h2>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Find your perfect stay</p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
 
-                <!-- Tours Card -->
-                <a href="/tours" class="group">
-                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                        <div class="h-32 bg-gradient-to-r from-purple-500 to-violet-400 p-4 flex items-center justify-center">
-                            <span class="text-4xl">🦋</span>
+                    <!-- Accommodation - Square -->
+                    <a href="/accommodation" class="group lg:col-span-2">
+                        <div class="relative h-64 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
+                            <div class="absolute inset-0 bg-gradient-to-br from-amber-600/10 to-yellow-500/10 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="p-8 flex flex-col h-full relative z-10">
+                                <div class="w-14 h-14 bg-amber-500 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-amber-500/20 mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    🏠
+                                </div>
+                                <h2 class="text-2xl font-black text-slate-900 dark:text-white">Stay</h2>
+                            </div>
                         </div>
-                        <div class="p-4 text-center">
-                            <h2 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Tours</h2>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Guided experiences</p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
 
-                <!-- Restaurants Card -->
-                <a href="/restaurants" class="group">
-                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                        <div class="h-32 bg-gradient-to-r from-red-500 to-rose-400 p-4 flex items-center justify-center">
-                            <span class="text-4xl">🍽️</span>
+                    <!-- Restaurants - Square -->
+                    <a href="/restaurants" class="group lg:col-span-2">
+                        <div class="relative h-64 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
+                            <div class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-rose-500/10 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="p-8 flex flex-col h-full relative z-10">
+                                <div class="w-14 h-14 bg-red-500 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-red-500/20 mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    🍽️
+                                </div>
+                                <h2 class="text-2xl font-black text-slate-900 dark:text-white">Dine</h2>
+                            </div>
                         </div>
-                        <div class="p-4 text-center">
-                            <h2 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Restaurants</h2>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Local dining options</p>
-                        </div>
-                    </div>
-                </a>
-
+                    </a>
+                </div>
             </div>
         </ContainerFluid>
-
     </main>
 </Layout>
 
 <style>
-    @keyframes gradient {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
     }
     
-    .animate-gradient {
-        background-size: 200% 200%;
-        animation: gradient 6s ease infinite;
+    .floating {
+        animation: float 4s ease-in-out infinite;
     }
 </style>
+

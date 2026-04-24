@@ -2,46 +2,51 @@
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="bg-white dark:bg-gray-800 shadow-lg relative">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="flex justify-between items-center h-16">
+<nav class="sticky top-0 z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
             <!-- Logo -->
-            <a href="/" class="text-emerald-600 dark:text-green-400 text-2xl font-bold">
-                Puerto Jiménez
+            <a href="/" class="text-slate-900 dark:text-white text-2xl font-black tracking-tighter hover:text-emerald-500 transition-colors">
+                PJ<span class="text-emerald-500">.</span>INFO
             </a>
 
             <!-- Botón móvil -->
-            <button id="mobile-menu-button" type="button" class="inline-flex md:hidden items-center justify-center p-2 text-gray-700 dark:text-gray-300">
+            <button id="mobile-menu-button" type="button" class="inline-flex md:hidden items-center justify-center p-2 text-slate-700 dark:text-slate-300">
                 <span class="sr-only">Abrir menú</span>
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8h16M4 16h16"></path>
                 </svg>
             </button>
 
             <!-- Menú escritorio -->
-            <div class="hidden md:flex md:items-center md:space-x-4">
-                <a href="/" class={`px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 ${currentPath === "/" ? "text-emerald-600" : ""}`}>Home</a>
-                <a href="/getting-puerto-jimenez" class={`px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 ${currentPath === "/getting-puerto-jimenez" ? "text-emerald-600" : ""}`}>Getting Here</a>
-                <a href="/artisans" class={`px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 ${currentPath === "/artisans" ? "text-emerald-600" : ""}`}>Artisans</a>
-                <a href="/contact" class={`px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 ${currentPath === "/contact" ? "text-emerald-600" : ""}`}>Contact</a>
-                <button id="theme-toggle" class="p-2 text-gray-700 dark:text-gray-300">
-                    <span class="dark:hidden">🌙</span>
-                    <span class="hidden dark:inline">☀️</span>
+            <div class="hidden md:flex md:items-center md:space-x-8">
+                <a href="/" class={`text-sm font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Home</a>
+                <a href="/getting-puerto-jimenez" class={`text-sm font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/getting-puerto-jimenez" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Getting Here</a>
+                <a href="/activities" class={`text-sm font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/activities" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Activities</a>
+                <a href="/artisans" class={`text-sm font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/artisans" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Artisans</a>
+                <a href="/contact" class={`px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full text-xs font-black uppercase tracking-widest hover:bg-emerald-500 dark:hover:bg-emerald-500 hover:text-white transition-all`}>Contact</a>
+                <button id="theme-toggle" class="p-2 text-slate-700 dark:text-slate-300 hover:text-emerald-500 transition-colors">
+                    <span class="dark:hidden text-xl">🌙</span>
+                    <span class="hidden dark:inline text-xl">☀️</span>
                 </button>
             </div>
         </div>
 
         <!-- Menú móvil -->
-        <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 bg-white dark:bg-gray-800 shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="/" class={`block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 ${currentPath === "/" ? "text-emerald-600" : ""}`}>Home</a>
-                <a href="/getting-puerto-jimenez" class={`block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 ${currentPath === "/getting-puerto-jimenez" ? "text-emerald-600" : ""}`}>Getting Here</a>
-                <a href="/artisans" class={`block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 ${currentPath === "/artisans" ? "text-emerald-600" : ""}`}>Artisans</a>
-                <a href="/contact" class={`block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 ${currentPath === "/contact" ? "text-emerald-600" : ""}`}>Contact</a>
-                <button id="theme-toggle-mobile" class="w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300">
-                    <span class="dark:hidden">🌙 Dark Mode</span>
-                    <span class="hidden dark:inline">☀️ Light Mode</span>
-                </button>
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border-b border-slate-200 dark:border-slate-800">
+            <div class="px-6 pt-4 pb-8 space-y-4">
+                <a href="/" class={`block text-lg font-bold ${currentPath === "/" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Home</a>
+                <a href="/getting-puerto-jimenez" class={`block text-lg font-bold ${currentPath === "/getting-puerto-jimenez" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Getting Here</a>
+                <a href="/activities" class={`block text-lg font-bold ${currentPath === "/activities" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Activities</a>
+                <a href="/artisans" class={`block text-lg font-bold ${currentPath === "/artisans" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Artisans</a>
+                <a href="/contact" class="block text-lg font-bold text-slate-600 dark:text-slate-400">Contact</a>
+                <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+                    <button id="theme-toggle-mobile" class="w-full text-left font-bold text-slate-600 dark:text-slate-400 flex items-center justify-between">
+                        <span>Appearance</span>
+                        <span class="dark:hidden">🌙</span>
+                        <span class="hidden dark:inline">☀️</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
