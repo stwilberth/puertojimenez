@@ -4,39 +4,9 @@ import ContainerFluid from '../components/ContainerFluid.astro';
 import Nav from '../components/Nav.astro';
 import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
-import elizabeth_ramirez from '../assets/elizabeth_ramirez.jpeg';
-import claudia_elizondo from '../assets/claudia_elizondo.jpeg';
-import elmer_rodriguez from '../assets/elmer_rodriguez.jpeg';
-import hubert_loria from '../assets/hubert_loria.jpg';
+import { Image, type ImageMetadata } from 'astro:assets';
 
 const artists = await getCollection('artists');
-
-// Map string paths from markdown to imported images
-const imageMap = {
-  'elizabeth_ramirez.jpeg': elizabeth_ramirez,
-  'claudia_elizondo.jpeg': claudia_elizondo,
-  'elmer_rodriguez.jpeg': elmer_rodriguez,
-  'hubert_loria.jpg': hubert_loria,
-};
-
-// Function to resolve image path
-const getImageFromPath = (imagePath) => {
-  if (!imagePath) return null;
-  
-  // Handle case where imagePath is an object with src property
-  if (typeof imagePath === 'object' && imagePath.src) {
-    imagePath = imagePath.src;
-  }
-  
-  // Ensure imagePath is a string before calling split
-  if (typeof imagePath !== 'string') {
-    return null;
-  }
-  
-  const filename = imagePath.split('/').pop();
-  return imageMap[filename] || null;
-};
 ---
 
 <Layout title="Welcome to Puerto Jimenez">
@@ -112,22 +82,19 @@ const getImageFromPath = (imagePath) => {
                             <div class="absolute inset-0 z-0">
                                 <div class="swiper artisan-mini-swiper h-full w-full">
                                     <div class="swiper-wrapper">
-                                        {artists.map(artist => {
-                                            const img = getImageFromPath(artist.data.image);
-                                            return (
-                                                <div class="swiper-slide">
-                                                    {img && (
-                                                        <Image 
-                                                            src={img} 
-                                                            alt={artist.data.name} 
-                                                            width={400} 
-                                                            height={300}
-                                                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]" 
-                                                        />
-                                                    )}
-                                                </div>
-                                            );
-                                        })}
+                                        {artists.map(artist => (
+                                            <div class="swiper-slide">
+                                                {artist.data.image && (
+                                                    <Image
+                                                        src={artist.data.image as ImageMetadata}
+                                                        alt={artist.data.name}
+                                                        width={400}
+                                                        height={300}
+                                                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]"
+                                                    />
+                                                )}
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>

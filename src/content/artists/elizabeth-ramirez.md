@@ -1,13 +1,13 @@
 ---
 order: 1
 name: "Elizabeth Ramirez"
-description: "Skilled artisan contributing to the vibrant local craft community."
-experience: "Long-standing member of the Puerto Jiménez artisan community."
-specialty: ["Artisan Crafts", "Traditional Techniques"]
+description: "Artisan with 18 years of experience crafting kitchen utensils from different types of wood, finished with vegetable oil. Prices start at $10."
+experience: "18 years"
+specialty: ["Kitchen Utensils", "Woodworking"]
 image: "../../assets/elizabeth_ramirez.jpeg"
 productsImage: "../../assets/elizabeth_ramirez_products.jpeg"
 ---
 
 # Elizabeth Ramirez
 
-Elizabeth is a respected artisan in Puerto Jiménez, known for her skill and dedication to traditional craft techniques. Her contributions help maintain the rich artistic heritage of the region.
+Artisan with 18 years of experience crafting kitchen utensils from different types of wood, finished with vegetable oil. Prices start at $10.

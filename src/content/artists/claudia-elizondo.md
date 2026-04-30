@@ -1,14 +1,14 @@
 ---
 order: 3
 name: "Claudia Elizondo"
-description: "Local artisan creating unique handmade products in Puerto Jiménez."
-experience: "Experienced artisan with a focus on local materials and traditional techniques."
+description: "Specialist in encapsulating real butterfly wings, provided by an authorized butterfly farm. Prices range from $8 to $25."
+experience: "Butterfly wing encapsulation specialist"
 email: "elizondoclaudia820@gmail.com"
-specialty: ["Handmade Crafts", "Local Products"]
+specialty: ["Butterfly Wing Encapsulation", "Nature Art"]
 image: "../../assets/claudia_elizondo.jpeg"
 productsImage: "../../assets/claudia_elizondo_products.jpeg"
 ---
 
 # Claudia Elizondo
 
-Claudia is a dedicated artisan based in Puerto Jiménez. Her work focuses on creating authentic products that reflect the natural beauty and culture of the Osa Peninsula. She uses a variety of local materials to produce unique pieces for visitors and locals alike.
+Specialist in encapsulating real butterfly wings, provided by an authorized butterfly farm. Prices range from $8 to $25.
