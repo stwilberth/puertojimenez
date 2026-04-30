@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import ContainerFluid from '../components/ContainerFluid.astro';
+import { Icon } from 'astro-icon/components';
+
+const operators = [
+    {
+        name: "Eco Expeditions CR",
+        website: "https://ecoexpeditionscr.com",
+        tours: ["Corcovado", "Wildlife", "Birdwatching", "Cultural"],
+        description: "Ecotourism experiences in the Osa Peninsula. Guided expeditions to Corcovado, wildlife watching, and cultural tours with expert naturalist guides.",
+        gradient: "from-emerald-500 to-green-600",
+        icon: "fa6-solid:tree",
+    },
+    {
+        name: "Corcovado Hiking Tours",
+        website: "https://www.corcovadohikingtours.com",
+        tours: ["Corcovado", "Night Hike", "Zip-line", "Whale Watching", "Turtles"],
+        description: "The oldest tour operator in Puerto Jiménez. Day tours and overnight multi-day Corcovado expeditions, night hikes, tree climbing, zip-lining, waterfall rappelling, and whale watching. Certified guides licensed by SINAC.",
+        gradient: "from-green-600 to-teal-600",
+        icon: "fa6-solid:map",
+    },
+    {
+        name: "Osa Great Adventure",
+        website: "https://osagreatadventure.com",
+        tours: ["Corcovado", "Caño Island", "Dolphins", "Kayaking", "Birdwatching"],
+        description: "Wildlife and nature tours throughout the Osa Peninsula. Corcovado expeditions to Sirena and La Leona, Caño Island snorkeling, whale and dolphin watching, bioluminescence kayaking, and mangrove tours.",
+        gradient: "from-blue-500 to-cyan-600",
+        icon: "fa6-solid:binoculars",
+    },
+    {
+        name: "Osa Aventura",
+        website: "https://osaaventura.com",
+        tours: ["Hiking", "Kayaking", "Canopy", "Scuba", "Horseback"],
+        description: "Hiking, birdwatching, kayaking, canopy tours, horseback riding, dolphin and snorkeling experiences. Sirena and La Leona day tours, Matapalo waterfall excursions, PADI scuba instruction.",
+        gradient: "from-teal-500 to-blue-600",
+        icon: "fa6-solid:water",
+    },
+    {
+        name: "Osa Wild Travel",
+        website: "https://www.osawild.travel",
+        tours: ["Corcovado", "Kayaking", "Eco", "Cultural", "Scientific"],
+        description: "Founded by naturalist guides, emphasizing ecotourism with minimal environmental impact. Corcovado overnight adventures, Golfo Dulce kayaking, cultural experiences, and educational/scientific tourism.",
+        gradient: "from-lime-500 to-emerald-600",
+        icon: "fa6-solid:leaf",
+    },
+    {
+        name: "Osa Green Travel",
+        website: "https://osagreentravel.com",
+        tours: ["Corcovado", "Dolphins", "Caño Island", "Canyoning", "Chocolate"],
+        description: "600+ 5-star reviews. 1–4 day Corcovado tours, dolphin & whale watching, Caño Island snorkeling, mangrove kayaking, birdwatching, night tours, chocolate farm visits, canyoning, and ziplining. Multilingual guides.",
+        gradient: "from-green-500 to-lime-600",
+        icon: "fa6-solid:star",
+    },
+    {
+        name: "Osa Jungle Tours",
+        website: "https://www.osajungletour.com",
+        tours: ["Jungle", "Sunset", "Chocolate", "Horseback", "Sloths"],
+        description: "Customizable jungle tours to spot sloths, monkeys, birds, and waterfalls. 4-hour jungle tours, sunset tours, chocolate tours, canopy tours, and beach horseback riding. Bookings via WhatsApp.",
+        gradient: "from-amber-500 to-orange-600",
+        icon: "fa6-solid:seedling",
+    },
+    {
+        name: "Surcos Tours",
+        website: "https://surcostours.com",
+        tours: ["Corcovado", "Birdwatching", "Transport", "Sirena"],
+        description: "Corcovado-Osa wildlife tours with professional guides, Sirena Station expeditions, birdwatching tours, and private transportation from San José to Puerto Jiménez. Customizable itineraries.",
+        gradient: "from-violet-500 to-purple-600",
+        icon: "fa6-solid:compass",
+    },
+];
+---
+
+<Layout title="Tour Operators in Puerto Jiménez | Osa Peninsula">
+    <main class="bg-slate-50 dark:bg-slate-950 min-h-screen font-sans">
+        <Nav />
+
+        <div class="relative py-20 overflow-hidden">
+            <div class="absolute top-[-10%] left-[-5%] w-[35%] h-[35%] bg-green-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-[-10%] right-[-5%] w-[35%] h-[35%] bg-emerald-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <ContainerFluid>
+                <div class="max-w-4xl mx-auto text-center relative z-10">
+                    <h1 class="text-6xl md:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter flex items-center justify-center gap-4">
+                        TOUR OPERATORS <Icon name="fa6-solid:compass" class="w-10 h-10 text-emerald-500 not-italic" />
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                        Expert-guided tours in Puerto Jiménez and the Osa Peninsula
+                    </p>
+                    <p class="text-lg text-slate-500 dark:text-slate-400 max-w-3xl mx-auto mt-4">
+                        All operators listed here offer certified naturalist guides and specialise in Corcovado National Park and Golfo Dulce adventures.
+                    </p>
+                </div>
+            </ContainerFluid>
+        </div>
+
+        <ContainerFluid>
+            <div class="max-w-6xl mx-auto pb-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {operators.map(op => (
+                        <a
+                            href={op.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="group bg-white dark:bg-slate-900 rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800 flex flex-col"
+                        >
+                            <!-- Header band with favicon -->
+                            <div class={`relative h-36 bg-gradient-to-br ${op.gradient} p-6 flex items-center gap-5`}>
+                                <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center shrink-0 overflow-hidden">
+                                    <img
+                                        src={`https://www.google.com/s2/favicons?domain=${new URL(op.website).hostname}&sz=64`}
+                                        alt={`${op.name} logo`}
+                                        width="40"
+                                        height="40"
+                                        class="rounded-lg"
+                                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                                    />
+                                    <div class="hidden items-center justify-center text-white w-full h-full">
+                                        <Icon name={op.icon} class="w-8 h-8" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="text-xl font-black text-white leading-tight">{op.name}</h2>
+                                    <span class="text-white/70 text-xs font-medium">{new URL(op.website).hostname}</span>
+                                </div>
+                                <div class="absolute top-5 right-5 text-white/60 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+                                    <Icon name="fa6-solid:arrow-up-right-from-square" class="w-4 h-4" />
+                                </div>
+                            </div>
+
+                            <!-- Body -->
+                            <div class="p-6 flex flex-col gap-4 flex-1">
+                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{op.description}</p>
+                                <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                                    {op.tours.map(tag => (
+                                        <span class="px-3 py-1 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 text-xs font-bold rounded-full border border-emerald-100 dark:border-emerald-800">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+
+                <p class="text-center text-slate-400 dark:text-slate-500 text-sm mt-16">
+                    Want to add your tour company to this list? <a href="/contact" class="text-emerald-500 hover:underline font-medium">Contact us.</a>
+                </p>
+            </div>
+        </ContainerFluid>
+    </main>
+</Layout>
