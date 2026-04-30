@@ -3,9 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import ContainerFluid from '../components/ContainerFluid.astro';
 import Nav from '../components/Nav.astro';
 import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+const artists = await getCollection('artists');
 ---
 
 <Layout title="Welcome to Puerto Jimenez">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <main class="bg-slate-50 dark:bg-slate-950 min-h-screen">
         <Nav />
         
@@ -21,7 +26,7 @@ import { Icon } from 'astro-icon/components';
                     </h1>
                     <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium flex items-center justify-center gap-3">
                         Your ultimate guide to the gateway of Corcovado National Park. 
-                        <Icon name="lucide:trees" class="w-8 h-8 text-green-500 inline" />
+                        <Icon name="fa6-solid:leaf" class="w-6 h-6 text-green-500 inline" />
                     </p>
                 </section>
             </ContainerFluid>
@@ -35,10 +40,12 @@ import { Icon } from 'astro-icon/components';
                         <div class="relative h-full bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-cyan-500/10 group-hover:opacity-100 transition-opacity"></div>
                             <div class="p-10 flex flex-col h-full relative z-10">
-                                <div class="w-20 h-20 bg-blue-500 rounded-3xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20 mb-8 group-hover:scale-110 transition-transform duration-500">
-                                    <Icon name="lucide:plane" class="w-10 h-10" />
+                                <div class="flex items-center gap-6 mb-4">
+                                    <div class="text-blue-500 group-hover:scale-110 transition-transform duration-500">
+                                        <Icon name="fa6-regular:map" class="w-12 h-12" />
+                                    </div>
+                                    <h2 class="text-4xl font-black text-slate-900 dark:text-white group-hover:text-blue-500 transition-colors">Getting Here</h2>
                                 </div>
-                                <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-4 group-hover:text-blue-500 transition-colors">Getting Here</h2>
                                 <p class="text-xl text-slate-600 dark:text-slate-400">Plan your journey by air, land, or sea. All roads lead to paradise.</p>
                                 <div class="mt-auto pt-10">
                                     <span class="inline-flex items-center text-blue-500 font-bold tracking-widest uppercase text-sm">
@@ -57,24 +64,48 @@ import { Icon } from 'astro-icon/components';
                         <div class="relative h-full bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-500/10 group-hover:opacity-100 transition-opacity"></div>
                             <div class="p-10 flex flex-col h-full relative z-10">
-                                <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-green-500/20 mb-6 group-hover:scale-110 transition-transform duration-500">
-                                    <Icon name="lucide:mountain-snow" class="w-8 h-8" />
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div class="text-green-500 group-hover:scale-110 transition-transform duration-500">
+                                        <Icon name="fa6-regular:compass" class="w-10 h-10" />
+                                    </div>
+                                    <h2 class="text-3xl font-black text-slate-900 dark:text-white">Tours & Activities</h2>
                                 </div>
-                                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-3">Tours & Activities</h2>
                                 <p class="text-slate-600 dark:text-slate-400">Guided wildlife treks and mangrove adventures.</p>
                             </div>
                         </div>
                     </a>
 
-                    <!-- Artisans - Square -->
+                    <!-- Artisans - Square with Slider -->
                     <a href="/artisans" class="group lg:col-span-2">
                         <div class="relative h-64 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
-                            <div class="absolute inset-0 bg-gradient-to-br from-orange-600/10 to-amber-500/10 group-hover:opacity-100 transition-opacity"></div>
-                            <div class="p-8 flex flex-col h-full relative z-10">
-                                <div class="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-500/20 mb-4 group-hover:scale-110 transition-transform duration-500">
-                                    <Icon name="lucide:palette" class="w-7 h-7" />
+                            <!-- Background Slider -->
+                            <div class="absolute inset-0 z-0">
+                                <div class="swiper artisan-mini-swiper h-full w-full">
+                                    <div class="swiper-wrapper">
+                                        {artists.map(artist => (
+                                            <div class="swiper-slide">
+                                                <Image 
+                                                    src={artist.data.image} 
+                                                    alt={artist.data.name} 
+                                                    width={400} 
+                                                    height={300}
+                                                    class="w-full h-full object-cover opacity-20 dark:opacity-40 group-hover:scale-110 transition-transform duration-[2000ms]" 
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                                <h2 class="text-2xl font-black text-slate-900 dark:text-white">Local Artisans</h2>
+                            </div>
+                            
+                            <div class="absolute inset-0 bg-gradient-to-br from-orange-600/20 to-amber-500/20 group-hover:opacity-100 transition-opacity"></div>
+                            
+                            <div class="p-8 flex flex-col h-full relative z-10 justify-center">
+                                <div class="flex items-center gap-4 bg-white/10 dark:bg-black/20 backdrop-blur-md p-4 rounded-2xl border border-white/20">
+                                    <div class="text-orange-500 group-hover:scale-110 transition-transform duration-500">
+                                        <Icon name="fa6-solid:palette" class="w-8 h-8" />
+                                    </div>
+                                    <h2 class="text-2xl font-black text-slate-900 dark:text-white">Local Artisans</h2>
+                                </div>
                             </div>
                         </div>
                     </a>
@@ -84,10 +115,12 @@ import { Icon } from 'astro-icon/components';
                         <div class="relative h-64 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-amber-600/10 to-yellow-500/10 group-hover:opacity-100 transition-opacity"></div>
                             <div class="p-8 flex flex-col h-full relative z-10">
-                                <div class="w-14 h-14 bg-amber-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-amber-500/20 mb-4 group-hover:scale-110 transition-transform duration-500">
-                                    <Icon name="lucide:bed-single" class="w-7 h-7" />
+                                <div class="flex items-center gap-4">
+                                    <div class="text-amber-500 group-hover:scale-110 transition-transform duration-500">
+                                        <Icon name="fa6-solid:bed" class="w-8 h-8" />
+                                    </div>
+                                    <h2 class="text-2xl font-black text-slate-900 dark:text-white">Stay</h2>
                                 </div>
-                                <h2 class="text-2xl font-black text-slate-900 dark:text-white">Stay</h2>
                             </div>
                         </div>
                     </a>
@@ -97,10 +130,12 @@ import { Icon } from 'astro-icon/components';
                         <div class="relative h-64 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-rose-500/10 group-hover:opacity-100 transition-opacity"></div>
                             <div class="p-8 flex flex-col h-full relative z-10">
-                                <div class="w-14 h-14 bg-red-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-red-500/20 mb-4 group-hover:scale-110 transition-transform duration-500">
-                                    <Icon name="lucide:utensils" class="w-7 h-7" />
+                                <div class="flex items-center gap-4">
+                                    <div class="text-red-500 group-hover:scale-110 transition-transform duration-500">
+                                        <Icon name="fa6-solid:utensils" class="w-8 h-8" />
+                                    </div>
+                                    <h2 class="text-2xl font-black text-slate-900 dark:text-white">Dine</h2>
                                 </div>
-                                <h2 class="text-2xl font-black text-slate-900 dark:text-white">Dine</h2>
                             </div>
                         </div>
                     </a>
@@ -108,6 +143,21 @@ import { Icon } from 'astro-icon/components';
             </div>
         </ContainerFluid>
     </main>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script is:inline>
+        new Swiper('.artisan-mini-swiper', {
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            speed: 1000,
+        });
+    </script>
 </Layout>
 
 <style>

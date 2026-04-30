@@ -25,7 +25,7 @@ const artists = (await getCollection('artists')).sort((a, b) => (a.data.order ??
             <ContainerFluid>
                 <div class="max-w-5xl mx-auto text-center relative z-10">
                     <h1 class="text-6xl md:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter italic flex items-center justify-center gap-4">
-                        LOCAL ARTISANS <Icon name="lucide:palette" class="w-12 h-12 text-orange-500 not-italic" />
+                        LOCAL ARTISANS <Icon name="fa6-solid:palette" class="w-10 h-10 text-orange-500 not-italic" />
                     </h1>
                     <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
                         Meet the creators who turn the soul of the Osa Peninsula into timeless art. 
@@ -75,7 +75,7 @@ const artists = (await getCollection('artists')).sort((a, b) => (a.data.order ??
                                 <!-- Floating Badge -->
                                 <div class="absolute -bottom-6 -right-6 md:right-10 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl z-20 border border-slate-100 dark:border-slate-700 hidden md:block">
                                     <div class="flex items-center gap-2 mb-1">
-                                        <Icon name="lucide:award" class="w-4 h-4 text-orange-500" />
+                                        <Icon name="fa6-solid:medal" class="w-4 h-4 text-orange-500" />
                                         <div class="text-xs font-bold text-orange-500 uppercase tracking-widest">Experience</div>
                                     </div>
                                     <div class="text-xl font-bold dark:text-white">{artist.data.experience}</div>
@@ -108,7 +108,7 @@ const artists = (await getCollection('artists')).sort((a, b) => (a.data.order ??
                                     {artist.data.email && (
                                         <a href={`mailto:${artist.data.email}`} class="inline-flex items-center group">
                                             <div class="w-12 h-12 flex items-center justify-center bg-orange-100 dark:bg-orange-900/20 text-orange-600 rounded-xl mr-4 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg shadow-orange-500/10">
-                                                <Icon name="lucide:mail" class="w-6 h-6" />
+                                                <Icon name="fa6-regular:envelope" class="w-6 h-6" />
                                             </div>
                                             <div>
                                                 <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Inquiries</div>
