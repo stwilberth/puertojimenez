@@ -16,15 +16,15 @@ const restaurantsCollection = defineCollection({
 // Define el esquema para la colección de artistas
 const artistsCollection = defineCollection({
   type: 'content',
-  schema: ({ image }) => z.object({
+  schema: z.object({
     order: z.number().optional(),
     name: z.string(),
     description: z.string(),
     experience: z.string(),
     email: z.string().email().optional(),
     specialty: z.array(z.string()),
-    image: image().optional(),
-    productsImage: image().optional(),
+    image: z.string().optional(),
+    productsImage: z.string().optional(),
   }),
 });
 
