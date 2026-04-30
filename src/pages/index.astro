@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ContainerFluid from '../components/ContainerFluid.astro';
 import Nav from '../components/Nav.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Welcome to Puerto Jimenez">
@@ -18,9 +19,9 @@ import Nav from '../components/Nav.astro';
                     <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-slate-900 dark:text-white">
                         PUERTO <span class="text-green-500">JIMENEZ</span>
                     </h1>
-                    <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium">
-                        Your ultimate guide to the gateway of Corcovado National Park. 🌿🐒
-                        Explore the most biodiverse place on Earth where the rainforest meets the sea.
+                    <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium flex items-center justify-center gap-3">
+                        Your ultimate guide to the gateway of Corcovado National Park. 
+                        <Icon name="lucide:trees" class="w-8 h-8 text-green-500 inline" />
                     </p>
                 </section>
             </ContainerFluid>
@@ -34,8 +35,8 @@ import Nav from '../components/Nav.astro';
                         <div class="relative h-full bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-cyan-500/10 group-hover:opacity-100 transition-opacity"></div>
                             <div class="p-10 flex flex-col h-full relative z-10">
-                                <div class="w-20 h-20 bg-blue-500 rounded-3xl flex items-center justify-center text-4xl shadow-lg shadow-blue-500/20 mb-8 group-hover:scale-110 transition-transform duration-500">
-                                    ✈️
+                                <div class="w-20 h-20 bg-blue-500 rounded-3xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20 mb-8 group-hover:scale-110 transition-transform duration-500">
+                                    <Icon name="lucide:plane" class="w-10 h-10" />
                                 </div>
                                 <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-4 group-hover:text-blue-500 transition-colors">Getting Here</h2>
                                 <p class="text-xl text-slate-600 dark:text-slate-400">Plan your journey by air, land, or sea. All roads lead to paradise.</p>
@@ -56,8 +57,8 @@ import Nav from '../components/Nav.astro';
                         <div class="relative h-full bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-500/10 group-hover:opacity-100 transition-opacity"></div>
                             <div class="p-10 flex flex-col h-full relative z-10">
-                                <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-green-500/20 mb-6 group-hover:scale-110 transition-transform duration-500">
-                                    🌿
+                                <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-green-500/20 mb-6 group-hover:scale-110 transition-transform duration-500">
+                                    <Icon name="lucide:mountain-snow" class="w-8 h-8" />
                                 </div>
                                 <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-3">Tours & Activities</h2>
                                 <p class="text-slate-600 dark:text-slate-400">Guided wildlife treks and mangrove adventures.</p>
@@ -70,10 +71,10 @@ import Nav from '../components/Nav.astro';
                         <div class="relative h-64 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-orange-600/10 to-amber-500/10 group-hover:opacity-100 transition-opacity"></div>
                             <div class="p-8 flex flex-col h-full relative z-10">
-                                <div class="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-orange-500/20 mb-4 group-hover:scale-110 transition-transform duration-500">
-                                    🎨
+                                <div class="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-500/20 mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <Icon name="lucide:palette" class="w-7 h-7" />
                                 </div>
-                                <h2 class="text-2xl font-black text-slate-900 dark:text-white">Artisans</h2>
+                                <h2 class="text-2xl font-black text-slate-900 dark:text-white">Local Artisans</h2>
                             </div>
                         </div>
                     </a>
@@ -83,8 +84,8 @@ import Nav from '../components/Nav.astro';
                         <div class="relative h-64 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-amber-600/10 to-yellow-500/10 group-hover:opacity-100 transition-opacity"></div>
                             <div class="p-8 flex flex-col h-full relative z-10">
-                                <div class="w-14 h-14 bg-amber-500 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-amber-500/20 mb-4 group-hover:scale-110 transition-transform duration-500">
-                                    🏠
+                                <div class="w-14 h-14 bg-amber-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-amber-500/20 mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <Icon name="lucide:bed-single" class="w-7 h-7" />
                                 </div>
                                 <h2 class="text-2xl font-black text-slate-900 dark:text-white">Stay</h2>
                             </div>
@@ -96,8 +97,8 @@ import Nav from '../components/Nav.astro';
                         <div class="relative h-64 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-rose-500/10 group-hover:opacity-100 transition-opacity"></div>
                             <div class="p-8 flex flex-col h-full relative z-10">
-                                <div class="w-14 h-14 bg-red-500 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-red-500/20 mb-4 group-hover:scale-110 transition-transform duration-500">
-                                    🍽️
+                                <div class="w-14 h-14 bg-red-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-red-500/20 mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <Icon name="lucide:utensils" class="w-7 h-7" />
                                 </div>
                                 <h2 class="text-2xl font-black text-slate-900 dark:text-white">Dine</h2>
                             </div>

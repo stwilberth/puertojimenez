@@ -1,4 +1,5 @@
 ---
+order: 4
 name: "Hubert Loría"
 description: "Artist and coordinator of local art projects in Puerto Jiménez."
 experience: "Multiple years of experience in local art and community coordination."

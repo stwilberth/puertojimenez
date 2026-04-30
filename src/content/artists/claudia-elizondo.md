@@ -1,4 +1,5 @@
 ---
+order: 3
 name: "Claudia Elizondo"
 description: "Local artisan creating unique handmade products in Puerto Jiménez."
 experience: "Experienced artisan with a focus on local materials and traditional techniques."

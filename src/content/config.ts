@@ -17,6 +17,7 @@ const restaurantsCollection = defineCollection({
 const artistsCollection = defineCollection({
   type: 'content',
   schema: ({ image }) => z.object({
+    order: z.number().optional(),
     name: z.string(),
     description: z.string(),
     experience: z.string(),

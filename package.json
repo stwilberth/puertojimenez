@@ -12,9 +12,11 @@
   "dependencies": {
     "@astrojs/react": "^4.2.0",
     "@astrojs/tailwind": "^5.1.4",
+    "@iconify-json/lucide": "^1.2.104",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "astro": "^5.1.1",
+    "astro-icon": "^1.1.5",
     "flowbite": "^2.5.2",
     "jquery": "^3.7.1",
     "lightbox2": "^2.11.5",

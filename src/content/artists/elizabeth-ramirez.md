@@ -1,4 +1,5 @@
 ---
+order: 1
 name: "Elizabeth Ramirez"
 description: "Skilled artisan contributing to the vibrant local craft community."
 experience: "Long-standing member of the Puerto Jiménez artisan community."

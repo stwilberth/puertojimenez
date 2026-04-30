@@ -5,8 +5,9 @@ import ContainerFluid from '../components/ContainerFluid.astro';
 import CallToAction from '../components/CallToAction.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 
-const artists = (await getCollection('artists')).sort((a, b) => b.data.name.localeCompare(a.data.name));
+const artists = (await getCollection('artists')).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 ---
 
 <Layout title="Local Artisans & Artists - Puerto Jiménez">
@@ -23,8 +24,8 @@ const artists = (await getCollection('artists')).sort((a, b) => b.data.name.loca
 
             <ContainerFluid>
                 <div class="max-w-5xl mx-auto text-center relative z-10">
-                    <h1 class="text-6xl md:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter italic">
-                        ARTISANS <span class="text-orange-500 not-italic">🎨</span>
+                    <h1 class="text-6xl md:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter italic flex items-center justify-center gap-4">
+                        LOCAL ARTISANS <Icon name="lucide:palette" class="w-12 h-12 text-orange-500 not-italic" />
                     </h1>
                     <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
                         Meet the creators who turn the soul of the Osa Peninsula into timeless art. 
@@ -73,7 +74,10 @@ const artists = (await getCollection('artists')).sort((a, b) => b.data.name.loca
                                 
                                 <!-- Floating Badge -->
                                 <div class="absolute -bottom-6 -right-6 md:right-10 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl z-20 border border-slate-100 dark:border-slate-700 hidden md:block">
-                                    <div class="text-xs font-bold text-orange-500 uppercase tracking-widest mb-1">Experience</div>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <Icon name="lucide:award" class="w-4 h-4 text-orange-500" />
+                                        <div class="text-xs font-bold text-orange-500 uppercase tracking-widest">Experience</div>
+                                    </div>
                                     <div class="text-xl font-bold dark:text-white">{artist.data.experience}</div>
                                 </div>
                             </div>
@@ -104,9 +108,7 @@ const artists = (await getCollection('artists')).sort((a, b) => b.data.name.loca
                                     {artist.data.email && (
                                         <a href={`mailto:${artist.data.email}`} class="inline-flex items-center group">
                                             <div class="w-12 h-12 flex items-center justify-center bg-orange-100 dark:bg-orange-900/20 text-orange-600 rounded-xl mr-4 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg shadow-orange-500/10">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                                </svg>
+                                                <Icon name="lucide:mail" class="w-6 h-6" />
                                             </div>
                                             <div>
                                                 <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Inquiries</div>

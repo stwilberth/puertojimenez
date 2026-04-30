@@ -1,4 +1,5 @@
 ---
+order: 2
 name: "Elmer Rodríguez Campos"
 description: "Professional painter and muralist dedicated to social transformation through art."
 experience: "36 years (Painting since 1990)"
