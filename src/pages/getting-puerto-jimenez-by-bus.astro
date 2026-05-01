@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Container from '../components/Container.astro';
 import ContainerFluid from '../components/ContainerFluid.astro';
 import Nav from '../components/Nav.astro';
+import { Image } from 'astro:assets';
+import puertoJimenezMap from '../assets/golfito_to_puerto_jimenez1.png';
 ---
 
 <Layout title="Getting to Puerto Jimenez by Bus | Travel Guide">
@@ -223,8 +225,20 @@ import Nav from '../components/Nav.astro';
                             </div>
                         </div>
                     </div>
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-gray-800 dark:text-white mb-3">Destination Map</h4>
+                        <div class="rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
+                            <Image
+                                src={puertoJimenezMap}
+                                alt="Map showing Puerto Jiménez and the Osa Peninsula"
+                                width={1200}
+                                class="w-full h-auto"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </ContainerFluid>
 
         <!-- Maps Section -->
