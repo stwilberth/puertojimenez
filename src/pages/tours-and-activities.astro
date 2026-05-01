@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import ContainerFluid from '../components/ContainerFluid.astro';
 import CallToAction from '../components/CallToAction.astro';
-
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Tours & Activities in Puerto Jiménez">
@@ -11,13 +11,13 @@ import CallToAction from '../components/CallToAction.astro';
         <Nav />
         <ContainerFluid>
             <section class="max-w-4xl mx-auto py-8">
-                <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-8 text-center">Tours & Activities in Puerto Jiménez 🌿🏝️</h1>
-                
+                <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-8 text-center">Tours & Activities in Puerto Jiménez</h1>
+
                 <div class="space-y-12">
                     <!-- Corcovado National Park -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group">
                         <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-600 p-8 flex items-center justify-center">
-                            <span class="text-6xl group-hover:scale-110 transition-transform duration-300">🌿</span>
+                            <Icon name="fa6-solid:tree" class="w-20 h-20 text-white/90 group-hover:scale-110 transition-transform duration-300" />
                         </div>
                         <div class="p-6">
                             <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Explore Corcovado National Park</h2>
@@ -36,18 +36,24 @@ import CallToAction from '../components/CallToAction.astro';
                     <!-- Marine Life -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group">
                         <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-600 p-8 flex items-center justify-center">
-                            <span class="text-6xl group-hover:scale-110 transition-transform duration-300">🐋</span>
+                            <Icon name="fa6-solid:water" class="w-20 h-20 text-white/90 group-hover:scale-110 transition-transform duration-300" />
                         </div>
                         <div class="p-6">
                             <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Marine Life Adventures</h2>
                             <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Dolphin & Whale Watching</h3>
-                                    <p class="text-gray-600 dark:text-gray-400">Take boat tours to see marine life in their natural habitat</p>
+                                <div class="flex gap-3">
+                                    <Icon name="fa6-solid:sailboat" class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                                    <div>
+                                        <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-1">Dolphin & Whale Watching</h3>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm">Take boat tours to see marine life in their natural habitat</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Snorkeling & Diving</h3>
-                                    <p class="text-gray-600 dark:text-gray-400">Discover coral reefs in the Golfo Dulce</p>
+                                <div class="flex gap-3">
+                                    <Icon name="fa6-solid:fish" class="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
+                                    <div>
+                                        <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-1">Snorkeling & Diving</h3>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm">Discover coral reefs in the Golfo Dulce</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -56,57 +62,87 @@ import CallToAction from '../components/CallToAction.astro';
                     <!-- Water Activities -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group">
                         <div class="h-48 bg-gradient-to-br from-teal-500 to-blue-600 p-8 flex items-center justify-center">
-                            <span class="text-6xl group-hover:scale-110 transition-transform duration-300">🛶</span>
+                            <Icon name="fa6-solid:person-swimming" class="w-20 h-20 text-white/90 group-hover:scale-110 transition-transform duration-300" />
                         </div>
                         <div class="p-6">
                             <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Water Activities</h2>
                             <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Kayaking</h3>
-                                    <p class="text-gray-600 dark:text-gray-400">Paddle through mangroves and crystal-clear waters</p>
+                                <div class="flex gap-3">
+                                    <Icon name="fa6-solid:water" class="w-5 h-5 text-teal-500 shrink-0 mt-0.5" />
+                                    <div>
+                                        <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-1">Kayaking</h3>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm">Paddle through mangroves and crystal-clear waters</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Sport Fishing</h3>
-                                    <p class="text-gray-600 dark:text-gray-400">Catch sailfish, tuna, and mahi-mahi</p>
+                                <div class="flex gap-3">
+                                    <Icon name="fa6-solid:fish" class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                                    <div>
+                                        <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-1">Sport Fishing</h3>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm">Catch sailfish, tuna, and mahi-mahi</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Adventure Activities -->
+                    <!-- More Adventures -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
                         <div class="p-6">
                             <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">More Adventures</h2>
                             <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                                <div class="text-center">
-                                    <span class="text-4xl mb-2 block">🏄‍♂️</span>
-                                    <h3 class="font-bold text-gray-700 dark:text-gray-300">Surfing</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Perfect waves at Playa Matapalo</p>
+                                <div class="flex flex-col items-center text-center gap-3">
+                                    <div class="w-12 h-12 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center">
+                                        <Icon name="fa6-solid:person-skiing" class="w-6 h-6 text-orange-500" />
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-gray-700 dark:text-gray-300">Surfing</h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Perfect waves at Playa Matapalo</p>
+                                    </div>
                                 </div>
-                                <div class="text-center">
-                                    <span class="text-4xl mb-2 block">🌙</span>
-                                    <h3 class="font-bold text-gray-700 dark:text-gray-300">Night Walks</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Discover nocturnal wildlife</p>
+                                <div class="flex flex-col items-center text-center gap-3">
+                                    <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
+                                        <Icon name="fa6-solid:moon" class="w-6 h-6 text-indigo-500" />
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-gray-700 dark:text-gray-300">Night Walks</h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Discover nocturnal wildlife</p>
+                                    </div>
                                 </div>
-                                <div class="text-center">
-                                    <span class="text-4xl mb-2 block">💦</span>
-                                    <h3 class="font-bold text-gray-700 dark:text-gray-300">Waterfalls</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Swim in natural pools</p>
+                                <div class="flex flex-col items-center text-center gap-3">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center">
+                                        <Icon name="fa6-solid:droplet" class="w-6 h-6 text-cyan-500" />
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-gray-700 dark:text-gray-300">Waterfalls</h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Swim in natural pools</p>
+                                    </div>
                                 </div>
-                                <div class="text-center">
-                                    <span class="text-4xl mb-2 block">🌳</span>
-                                    <h3 class="font-bold text-gray-700 dark:text-gray-300">Canopy Tours</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Zip-line adventures</p>
+                                <div class="flex flex-col items-center text-center gap-3">
+                                    <div class="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                                        <Icon name="fa6-solid:seedling" class="w-6 h-6 text-green-500" />
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-gray-700 dark:text-gray-300">Canopy Tours</h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Zip-line adventures</p>
+                                    </div>
                                 </div>
-                                <div class="text-center">
-                                    <span class="text-4xl mb-2 block">🐎</span>
-                                    <h3 class="font-bold text-gray-700 dark:text-gray-300">Horseback</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Beach & jungle trails</p>
+                                <div class="flex flex-col items-center text-center gap-3">
+                                    <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                                        <Icon name="fa6-solid:horse" class="w-6 h-6 text-amber-500" />
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-gray-700 dark:text-gray-300">Horseback</h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Beach & jungle trails</p>
+                                    </div>
                                 </div>
-                                <div class="text-center">
-                                    <span class="text-4xl mb-2 block">🍫</span>
-                                    <h3 class="font-bold text-gray-700 dark:text-gray-300">Farm Tours</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Cacao & coffee farms</p>
+                                <div class="flex flex-col items-center text-center gap-3">
+                                    <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center">
+                                        <Icon name="fa6-solid:mug-hot" class="w-6 h-6 text-rose-500" />
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-gray-700 dark:text-gray-300">Farm Tours</h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Cacao & coffee farms</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -118,9 +154,7 @@ import CallToAction from '../components/CallToAction.astro';
                     <p class="text-gray-600 dark:text-gray-400 mb-6">Browse certified local tour operators who specialise in Corcovado, Golfo Dulce, and Osa Peninsula adventures.</p>
                     <a href="/tour-operators" class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-colors">
                         View Tour Operators
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
+                        <Icon name="fa6-solid:arrow-right" class="w-4 h-4" />
                     </a>
                 </div>
 
