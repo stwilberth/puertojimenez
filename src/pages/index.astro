@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ContainerFluid from '../components/ContainerFluid.astro';
 import Nav from '../components/Nav.astro';
+import HubCard from '../components/HubCard.astro';
 import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 import { Image, type ImageMetadata } from 'astro:assets';
@@ -35,45 +36,29 @@ const artists = await getCollection('artists');
         <ContainerFluid>
             <div class="max-w-6xl mx-auto pb-24">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
-                    <!-- Getting Here Card - Large -->
-                    <a href="/getting-puerto-jimenez" class="group lg:col-span-4 lg:row-span-2">
-                        <div class="relative h-full bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-cyan-500/10 group-hover:opacity-100 transition-opacity"></div>
-                            <div class="p-10 flex flex-col h-full relative z-10">
-                                <div class="flex items-center gap-6 mb-4">
-                                    <div class="text-blue-500 group-hover:scale-110 transition-transform duration-500">
-                                        <Icon name="fa6-regular:map" class="w-12 h-12" />
-                                    </div>
-                                    <h2 class="text-4xl font-black text-slate-900 dark:text-white group-hover:text-blue-500 transition-colors">Getting Here</h2>
-                                </div>
-                                <p class="text-xl text-slate-600 dark:text-slate-400">Plan your journey by air, land, or sea. All roads lead to paradise.</p>
-                                <div class="mt-auto pt-10">
-                                    <span class="inline-flex items-center text-blue-500 font-bold tracking-widest uppercase text-sm">
-                                        Explore Routes 
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                        </svg>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                    <HubCard
+                        href="/getting-puerto-jimenez"
+                        title="Getting Here"
+                        description="Plan your journey by air, land, or sea. All roads lead to paradise."
+                        icon="fa6-regular:map"
+                        iconColor="text-blue-500"
+                        hoverTitle="group-hover:text-blue-500"
+                        gradient="from-blue-600/10 to-cyan-500/10"
+                        cta="Explore Routes"
+                        featured
+                        class="lg:col-span-3 lg:row-span-2"
+                    />
 
-                    <!-- Tours & Activities - Vertical -->
-                    <a href="/tours-and-activities" class="group lg:col-span-2 lg:row-span-2">
-                        <div class="relative h-full bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
-                            <div class="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-500/10 group-hover:opacity-100 transition-opacity"></div>
-                            <div class="p-10 flex flex-col h-full relative z-10">
-                                <div class="flex items-center gap-4 mb-3">
-                                    <div class="text-green-500 group-hover:scale-110 transition-transform duration-500">
-                                        <Icon name="fa6-regular:compass" class="w-10 h-10" />
-                                    </div>
-                                    <h2 class="text-3xl font-black text-slate-900 dark:text-white">Tours & Activities</h2>
-                                </div>
-                                <p class="text-slate-600 dark:text-slate-400">Guided wildlife treks and mangrove adventures.</p>
-                            </div>
-                        </div>
-                    </a>
+                    <HubCard
+                        href="/tours-and-activities"
+                        title="Tours & Activities"
+                        description="Guided wildlife treks and mangrove adventures."
+                        icon="fa6-regular:compass"
+                        iconColor="text-green-500"
+                        hoverTitle="group-hover:text-green-500"
+                        gradient="from-green-600/10 to-emerald-500/10"
+                        class="lg:col-span-3 lg:row-span-2"
+                    />
 
                     <!-- Artisans - Full width, prominent -->
                     <a href="/artisans" class="group lg:col-span-6">
@@ -100,72 +85,49 @@ const artists = await getCollection('artists');
                             </div>
 
                             <!-- Gradient overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/10 z-10"></div>
+                            <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/70 z-10"></div>
 
                             <!-- Content -->
-                            <div class="absolute inset-0 z-20 p-8 md:p-12 flex flex-col justify-between">
+                            <div class="absolute inset-0 z-20 p-6 md:p-8 flex flex-col justify-between">
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <Icon name="fa6-solid:palette" class="w-6 h-6 text-orange-400" />
-                                        <span class="text-orange-400 font-bold uppercase tracking-widest text-xs">Local Artisans</span>
+                                        <span class="text-orange-400 font-bold uppercase tracking-widest text-2xl md:text-4xl">Local Artisans</span>
                                     </div>
-                                    <h2 class="text-4xl md:text-5xl font-black text-white leading-tight max-w-xl">
+                                    <h2 class="text-xl md:text-2xl font-black text-white leading-tight max-w-xl">
                                         Authentic Jiménez<br/>Souvenirs
                                     </h2>
                                     <p class="text-white/60 mt-3 text-base md:text-lg max-w-md">
-                                        Handcrafted in the Osa Peninsula. Every Friday at the Martínez fair in Matapalo.
+                                        Handcrafted in the Osa Peninsula. Every Friday at the Martina fair in Matapalo.
                                     </p>
                                 </div>
 
-                                <!-- Artist name chips -->
-                                <div class="flex flex-wrap gap-3 items-center">
-                                    {artists.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0)).map(artist => (
-                                        <span class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 text-white text-sm font-semibold">
-                                            {artist.data.name.split(' ')[0]}
-                                        </span>
-                                    ))}
-                                    <span class="text-white/50 text-sm font-bold group-hover:text-orange-400 transition-colors flex items-center gap-1">
-                                        Meet them all
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                        </svg>
-                                    </span>
-                                </div>
+
                             </div>
                         </div>
                     </a>
 
-                    <!-- Accommodation -->
-                    <a href="/accommodation" class="group lg:col-span-3">
-                        <div class="relative h-48 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
-                            <div class="absolute inset-0 bg-gradient-to-br from-amber-600/10 to-yellow-500/10 group-hover:opacity-100 transition-opacity"></div>
-                            <div class="p-8 flex flex-col h-full relative z-10 justify-between">
-                                <div class="text-amber-500 group-hover:scale-110 transition-transform duration-500 w-fit">
-                                    <Icon name="fa6-solid:bed" class="w-8 h-8" />
-                                </div>
-                                <div>
-                                    <h2 class="text-2xl font-black text-slate-900 dark:text-white">Stay</h2>
-                                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Hotels, lodges & eco-cabinas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                    <HubCard
+                        href="/accommodation"
+                        title="Stay"
+                        description="Hotels, lodges & eco-cabinas"
+                        icon="fa6-solid:bed"
+                        iconColor="text-amber-500"
+                        hoverTitle="group-hover:text-amber-500"
+                        gradient="from-amber-600/10 to-yellow-500/10"
+                        class="lg:col-span-3 h-48"
+                    />
 
-                    <!-- Restaurants -->
-                    <a href="/restaurants" class="group lg:col-span-3">
-                        <div class="relative h-48 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
-                            <div class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-rose-500/10 group-hover:opacity-100 transition-opacity"></div>
-                            <div class="p-8 flex flex-col h-full relative z-10 justify-between">
-                                <div class="text-red-500 group-hover:scale-110 transition-transform duration-500 w-fit">
-                                    <Icon name="fa6-solid:utensils" class="w-8 h-8" />
-                                </div>
-                                <div>
-                                    <h2 class="text-2xl font-black text-slate-900 dark:text-white">Dine</h2>
-                                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Restaurants & local sodas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                    <HubCard
+                        href="/restaurants"
+                        title="Dine"
+                        description="Restaurants & local sodas"
+                        icon="fa6-solid:utensils"
+                        iconColor="text-red-500"
+                        hoverTitle="group-hover:text-red-500"
+                        gradient="from-red-600/10 to-rose-500/10"
+                        class="lg:col-span-3 h-48"
+                    />
                 </div>
             </div>
         </ContainerFluid>
