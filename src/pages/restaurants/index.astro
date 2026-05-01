@@ -3,51 +3,97 @@ import Layout from '../../layouts/Layout.astro';
 import ContainerFluid from '../../components/ContainerFluid.astro';
 import Nav from '../../components/Nav.astro';
 import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
 
-// Obtener todos los restaurantes de la colección
-const restaurants = await getCollection('restaurants');
+const restaurants = (await getCollection('restaurants')).sort((a, b) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
+
+const cuisineIcon: Record<string, string> = {
+    'Seafood': 'fa6-solid:fish',
+    'Costa Rican': 'fa6-solid:bowl-food',
+    'Italian': 'fa6-solid:pizza-slice',
+    'Italian / Pizza': 'fa6-solid:pizza-slice',
+    'International / Vegetarian-friendly': 'fa6-solid:seedling',
+    'Seafood / Latin': 'fa6-solid:shrimp',
+    'default': 'fa6-solid:utensils',
+};
+
+const priceColor: Record<string, string> = {
+    '$': 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400',
+    '$$': 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400',
+    '$$$': 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400',
+};
 ---
 
-<Layout title="Restaurantes en Puerto Jiménez">
-    <main>
+<Layout title="Restaurants in Puerto Jiménez | Where to Eat">
+    <main class="bg-slate-50 dark:bg-slate-950 min-h-screen font-sans">
         <Nav />
+
+        <div class="relative py-20 overflow-hidden">
+            <div class="absolute top-[-10%] left-[-5%] w-[35%] h-[35%] bg-orange-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-[-10%] right-[-5%] w-[35%] h-[35%] bg-red-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <ContainerFluid>
+                <div class="max-w-4xl mx-auto text-center relative z-10">
+                    <h1 class="text-6xl md:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter flex items-center justify-center gap-4">
+                        WHERE TO EAT <Icon name="fa6-solid:utensils" class="w-10 h-10 text-orange-500 not-italic" />
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                        From beachfront ceviche to Sicilian pizza — dining in Puerto Jiménez.
+                    </p>
+                    <div class="flex items-center justify-center gap-3 mt-8 flex-wrap">
+                        <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">$ Budget</span>
+                        <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400">$$ Mid-range</span>
+                        <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400">$$$ Upscale</span>
+                    </div>
+                </div>
+            </ContainerFluid>
+        </div>
+
         <ContainerFluid>
-            <section class="text-center space-y-4 mb-8">
-                <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 dark:from-orange-400 dark:to-orange-300 bg-clip-text text-transparent animate-gradient">
-                    Restaurantes en Puerto Jiménez
-                </h1>
-                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-4xl mx-auto">
-                    Descubre los mejores lugares para disfrutar de la gastronomía local y sabores únicos de la Península de Osa.
-                </p>
-            </section>
-        </ContainerFluid>
-        
-        <ContainerFluid>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {restaurants.map((restaurant) => (
-                    <a href={`/restaurants/${restaurant.slug}`} class="group">
-                        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
-                            <div class="h-32 bg-gradient-to-r from-orange-500 to-amber-400 p-4 flex items-center justify-center">
-                                <span class="text-4xl">🍽️</span>
-                            </div>
-                            <div class="p-6">
-                                <h2 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
-                                    {restaurant.data.title.split(':')[0]}
-                                </h2>
-                                <p class="text-gray-600 dark:text-gray-400 mt-2">
-                                    {restaurant.data.description}
-                                </p>
-                                <div class="mt-4 flex flex-wrap gap-2">
-                                    {restaurant.data.tags.slice(0, 3).map((tag) => (
-                                        <span class="px-2 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-100 text-xs rounded-full">
-                                            {tag}
-                                        </span>
-                                    ))}
+            <div class="max-w-6xl mx-auto pb-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {restaurants.map((restaurant) => {
+                        const icon = cuisineIcon[restaurant.data.cuisine ?? ''] ?? cuisineIcon['default'];
+                        const price = restaurant.data.priceRange ?? '';
+                        return (
+                            <a href={`/restaurants/${restaurant.slug}`} class="group bg-white dark:bg-slate-900 rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-100 dark:border-slate-800 flex flex-col">
+                                <div class="h-32 bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                                    <Icon name={icon} class="w-14 h-14 text-white/90 group-hover:scale-110 transition-transform duration-500 relative z-10" />
                                 </div>
-                            </div>
-                        </div>
-                    </a>
-                ))}
+                                <div class="p-6 flex flex-col gap-3 flex-1">
+                                    <div class="flex items-center gap-2 flex-wrap">
+                                        {restaurant.data.cuisine && (
+                                            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                                                {restaurant.data.cuisine}
+                                            </span>
+                                        )}
+                                        {price && (
+                                            <span class={`px-2.5 py-0.5 rounded-full text-xs font-bold ${priceColor[price] ?? ''}`}>
+                                                {price}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <h2 class="text-xl font-black text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors leading-tight">
+                                        {restaurant.data.title}
+                                    </h2>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed flex-1">
+                                        {restaurant.data.description}
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                                        {restaurant.data.tags.slice(0, 3).map((tag) => (
+                                            <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-full">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </a>
+                        );
+                    })}
+                </div>
             </div>
         </ContainerFluid>
     </main>

@@ -10,6 +10,8 @@ const restaurantsCollection = defineCollection({
     pubDate: z.string(),
     author: z.string(),
     tags: z.array(z.string()),
+    cuisine: z.string().optional(),
+    priceRange: z.string().optional(),
   }),
 });
 
