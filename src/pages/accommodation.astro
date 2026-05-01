@@ -2,59 +2,230 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import ContainerFluid from '../components/ContainerFluid.astro';
-import CallToAction from '../components/CallToAction.astro';
+import { Icon } from 'astro-icon/components';
 
+const accommodations = [
+    {
+        name: "Lapa Rios Ecolodge",
+        website: "https://www.laparios.com",
+        type: "Eco-Lodge",
+        tier: "luxury",
+        price: "$$$",
+        tags: ["Private Reserve", "All-Inclusive", "Ocean View", "Wildlife"],
+        description: "National Geographic Unique Lodge of the World. 17 open-sided thatched-roof bungalows on 1,000 acres of private rainforest reserve overlooking the Pacific. All-inclusive packages with meals, activities, and transfers.",
+        gradient: "from-green-700 to-emerald-800",
+        icon: "fa6-solid:tree",
+    },
+    {
+        name: "Botanika Osa Peninsula",
+        website: "https://botanikaresort.com",
+        type: "Luxury Resort",
+        tier: "luxury",
+        price: "$$$",
+        tags: ["Hilton Curio", "Pool", "Spa", "Beach Club", "Rainforest"],
+        description: "Hilton's 5-star sustainable resort in coastal rainforest near Corcovado. 1–3 bedroom suites, lagoon-style pool, spa, private beach club (Cahui), ziplining, sport fishing, and eco-adventures.",
+        gradient: "from-teal-700 to-cyan-800",
+        icon: "fa6-solid:hotel",
+    },
+    {
+        name: "Playa Cativo Lodge",
+        website: "https://www.playacativo.com",
+        type: "Eco-Lodge",
+        tier: "luxury",
+        price: "$$$",
+        tags: ["Boat Access Only", "Golfo Dulce", "Farm-to-Table", "Nature Reserve"],
+        description: "The only luxury hotel with direct access to the Golfo Dulce, reachable only by boat. Set within a 1,000-acre private nature reserve next to Piedras Blancas National Park. TripAdvisor Best of the Best 2025.",
+        gradient: "from-blue-700 to-indigo-800",
+        icon: "fa6-solid:sailboat",
+    },
+    {
+        name: "El Remanso Lodge",
+        website: "https://elremanso.com",
+        type: "Rainforest Lodge",
+        tier: "luxury",
+        price: "$$$",
+        tags: ["Private Pools", "Ocean View", "Trails", "Sustainable"],
+        description: "16 sustainable villas and bungalows with private plunge pools set within tropical lowland rainforest. Ocean views, in-house nature trails, and full wildlife immersion on the Osa Peninsula.",
+        gradient: "from-emerald-700 to-green-800",
+        icon: "fa6-solid:leaf",
+    },
+    {
+        name: "Luna Lodge",
+        website: "https://lunalodge.com",
+        type: "Eco-Lodge",
+        tier: "luxury",
+        price: "$$$",
+        tags: ["Corcovado", "Rainforest", "Yoga", "Wellness"],
+        description: "Premier eco-lodge nestled in pristine rainforest near Corcovado National Park. Immersive nature experiences with sustainable practices, yoga, and direct access to primary forest.",
+        gradient: "from-violet-700 to-purple-800",
+        icon: "fa6-solid:moon",
+    },
+    {
+        name: "Iguana Lodge Beach Resort",
+        website: "https://www.iguanalodge.com",
+        type: "Beach Resort",
+        tier: "mid",
+        price: "$$",
+        tags: ["Beachfront", "Spa", "Yoga", "Restaurant", "Pool"],
+        description: "Beachfront resort near Platanares Beach with 19 rooms. Full-service spa, restaurant, art gallery, two yoga decks, and lap pool. Ranked #5 of 13 hotels in Puerto Jiménez on TripAdvisor.",
+        gradient: "from-amber-600 to-orange-700",
+        icon: "fa6-solid:umbrella-beach",
+    },
+    {
+        name: "Finca Exótica Ecolodge",
+        website: "https://fincaexotica.com",
+        type: "Eco-Lodge",
+        tier: "mid",
+        price: "$$",
+        tags: ["Beachfront", "Glamping", "Surfing", "Yoga", "Corcovado"],
+        description: "Beachfront ecolodge near Carate with rustic open-air cabanas and glamping tents. Yoga deck over the Pacific, restaurant, hiking, surfing, and birdwatching. Primary rainforest access.",
+        gradient: "from-lime-600 to-green-700",
+        icon: "fa6-solid:tent",
+    },
+    {
+        name: "Hotel Jiménez",
+        website: "https://www.hoteljimenez.com",
+        type: "Boutique Hotel",
+        tier: "budget",
+        price: "$",
+        tags: ["Downtown", "Garden Pool", "WiFi", "Parking", "Walking Distance"],
+        description: "Boutique B&B in downtown Puerto Jiménez with tropical garden and waterfall pool. Walking distance to beaches, restaurants, and shops. Free WiFi and parking included.",
+        gradient: "from-sky-600 to-blue-700",
+        icon: "fa6-solid:bed",
+    },
+    {
+        name: "Cabinas Tropicales",
+        website: "https://www.cabinastropicales.com/en",
+        type: "Cabinas",
+        tier: "budget",
+        price: "$",
+        tags: ["Near Airport", "A/C", "Kitchen", "Family-Friendly", "From $46"],
+        description: "6 air-conditioned rooms 50 meters from the airport. Family rooms available, fully equipped kitchens, free WiFi, and garden. Corcovado hikes and fishing trips easily arranged.",
+        gradient: "from-orange-600 to-red-700",
+        icon: "fa6-solid:house",
+    },
+    {
+        name: "La Palapa Hut Nature Hostel",
+        website: "https://www.booking.com/hotel/cr/the-palapa-hut.html",
+        type: "Hostel",
+        tier: "budget",
+        price: "$",
+        tags: ["From $20", "Monkeys", "Sloths", "Garden", "Bar"],
+        description: "Eco-hostel on a 1.5-hectare tropical garden 300 m from town and beach. All four monkey species, sloths, and macaws on-site. Dorms and private rooms, bar, and terrace.",
+        gradient: "from-rose-600 to-pink-700",
+        icon: "fa6-solid:users",
+    },
+];
+
+const tierLabel: Record<string, string> = {
+    luxury: "Luxury",
+    mid: "Mid-Range",
+    budget: "Budget",
+};
+
+const tierColor: Record<string, string> = {
+    luxury: "bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-800",
+    mid: "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800",
+    budget: "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800",
+};
 ---
 
-<Layout title="Accommodation in Puerto Jiménez">
-    <main>
+<Layout title="Where to Stay in Puerto Jiménez | Hotels & Lodges">
+    <main class="bg-slate-50 dark:bg-slate-950 min-h-screen font-sans">
         <Nav />
+
+        <div class="relative py-20 overflow-hidden">
+            <div class="absolute top-[-10%] left-[-5%] w-[35%] h-[35%] bg-amber-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-[-10%] right-[-5%] w-[35%] h-[35%] bg-emerald-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <ContainerFluid>
+                <div class="max-w-4xl mx-auto text-center relative z-10">
+                    <h1 class="text-6xl md:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter flex items-center justify-center gap-4">
+                        WHERE TO STAY <Icon name="fa6-solid:bed" class="w-10 h-10 text-amber-500 not-italic" />
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                        From jungle eco-lodges to budget cabinas, Puerto Jiménez has accommodation for every traveller.
+                    </p>
+
+                    <!-- Tier filter legend -->
+                    <div class="flex items-center justify-center gap-3 mt-8 flex-wrap">
+                        <span class="px-4 py-1.5 rounded-full text-xs font-bold border bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-800">$$$ Luxury</span>
+                        <span class="px-4 py-1.5 rounded-full text-xs font-bold border bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800">$$ Mid-Range</span>
+                        <span class="px-4 py-1.5 rounded-full text-xs font-bold border bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800">$ Budget</span>
+                    </div>
+                </div>
+            </ContainerFluid>
+        </div>
+
         <ContainerFluid>
-            <section class="max-w-4xl mx-auto py-8">
-                <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-8">Where to Stay in Puerto Jiménez</h1>
-                
-                <div class="space-y-12">
-                    <!-- Hotels -->
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                        <div class="p-6">
-                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Hotels</h2>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                From luxury eco-lodges to comfortable budget hotels, Puerto Jiménez offers accommodation options for every traveler.
-                            </p>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div class="space-y-4">
-                                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Luxury & Mid-Range</h3>
-                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
-                                        <li>Iguana Lodge</li>
-                                        <li>Lapa Rios Lodge</li>
-                                        <li>Poor Man's Paradise</li>
-                                        <li>Agua Dulce Resort</li>
-                                    </ul>
+            <div class="max-w-6xl mx-auto pb-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {accommodations.map(hotel => (
+                        <a
+                            href={hotel.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="group bg-white dark:bg-slate-900 rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800 flex flex-col"
+                        >
+                            <!-- Header -->
+                            <div class={`relative h-36 bg-gradient-to-br ${hotel.gradient} p-6 flex items-center gap-5`}>
+                                <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center shrink-0 overflow-hidden">
+                                    <img
+                                        src={`https://www.google.com/s2/favicons?domain=${new URL(hotel.website).hostname}&sz=64`}
+                                        alt={`${hotel.name} logo`}
+                                        width="40"
+                                        height="40"
+                                        class="rounded-lg"
+                                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                                    />
+                                    <div class="hidden items-center justify-center text-white w-full h-full">
+                                        <Icon name={hotel.icon} class="w-8 h-8" />
+                                    </div>
                                 </div>
-                                <div class="space-y-4">
-                                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Budget-Friendly</h3>
-                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
-                                        <li>Cabinas Jiménez</li>
-                                        <li>La Chosa del Manglar</li>
-                                        <li>Cabinas Puerto Jiménez</li>
-                                    </ul>
+                                <div class="flex-1 min-w-0">
+                                    <h2 class="text-xl font-black text-white leading-tight truncate">{hotel.name}</h2>
+                                    <span class="text-white/70 text-xs font-medium">{hotel.type}</span>
+                                </div>
+                                <div class="absolute top-5 right-5 text-white/60 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+                                    <Icon name="fa6-solid:arrow-up-right-from-square" class="w-4 h-4" />
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                </div>
-
-                <div class="mt-12">
-                    <div class="bg-gradient-to-r from-green-600 to-green-400 rounded-xl p-8 text-center">
-                        <h2 class="text-3xl font-bold text-white mb-4">View in Booking.com</h2>
-                        <p class="text-white/90 mb-6"></p>
-                        <a href="https://www.booking.com/city/cr/puerto-jimenez.es.html" class="inline-block bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                            Go to Booking.com
+                            <!-- Body -->
+                            <div class="p-6 flex flex-col gap-4 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class={`px-3 py-1 rounded-full text-xs font-bold border ${tierColor[hotel.tier]}`}>
+                                        {hotel.price} {tierLabel[hotel.tier]}
+                                    </span>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{hotel.description}</p>
+                                <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                                    {hotel.tags.map(tag => (
+                                        <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-full">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
                         </a>
-                    </div>
+                    ))}
                 </div>
-            </section>
+
+                <!-- Booking.com CTA -->
+                <div class="mt-16 bg-gradient-to-r from-blue-600 to-blue-500 rounded-[2rem] p-10 text-center shadow-xl">
+                    <h2 class="text-3xl font-black text-white mb-3">See All Options on Booking.com</h2>
+                    <p class="text-white/80 mb-6">Compare prices, read reviews, and book your stay in Puerto Jiménez.</p>
+                    <a
+                        href="https://www.booking.com/city/cr/puerto-jimenez.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 bg-white text-blue-600 font-black px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors"
+                    >
+                        Browse on Booking.com
+                        <Icon name="fa6-solid:arrow-up-right-from-square" class="w-4 h-4" />
+                    </a>
+                </div>
+            </div>
         </ContainerFluid>
     </main>
 </Layout>
