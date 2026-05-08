@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import ContainerFluid from '../components/ContainerFluid.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<Layout title="Corcovado National Park Guide | Puerto Jiménez">
+    <main class="bg-slate-50 dark:bg-slate-950 min-h-screen">
+        <Nav />
+
+        <!-- Hero Section -->
+        <div class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-slate-50 dark:to-slate-950 z-10"></div>
+                <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1590691566903-692bf5ca7678?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center animate-slow-zoom"></div>
+            </div>
+
+            <ContainerFluid>
+                <div class="relative z-20 text-center space-y-4">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-500/30 text-emerald-300 text-sm font-bold uppercase tracking-widest mb-4">
+                        <Icon name="fa6-solid:tree" class="w-4 h-4" />
+                        The Amazon of Costa Rica
+                    </div>
+                    <h1 class="text-6xl md:text-8xl font-black text-white tracking-tighter">
+                        CORCOVADO
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto font-medium">
+                        Discover the most biologically intense place on Earth.
+                    </p>
+                </div>
+            </ContainerFluid>
+        </div>
+
+        <ContainerFluid>
+            <div class="max-w-5xl mx-auto -mt-20 relative z-30 pb-24">
+                <!-- Quick Info Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-800">
+                        <Icon name="fa6-solid:calendar-check" class="w-8 h-8 text-emerald-500 mb-4" />
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-2">Advance Booking</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Strict daily limits. Book 4-6 weeks ahead.</p>
+                    </div>
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-800">
+                        <Icon name="fa6-solid:person-hiking" class="w-8 h-8 text-blue-500 mb-4" />
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-2">Mandatory Guide</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Entrance requires a certified naturalist guide.</p>
+                    </div>
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-800">
+                        <Icon name="fa6-solid:clock" class="w-8 h-8 text-orange-500 mb-4" />
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-2">Early Starts</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Tours depart at 6:00 AM for optimal wildlife.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <!-- Main Content -->
+                    <div class="lg:col-span-2 space-y-12">
+                        <section>
+                            <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-6">About the Park</h2>
+                            <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                                Corcovado National Park protects 41,700 hectares of shallow lagoons, marshes, mangrove swamps, rivers, low-altitude cloud forest, and 46 kilometers of sandy beaches. It is home to all four monkey species found in Costa Rica, both species of sloths, and the endangered Baird's tapir.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="relative h-48 rounded-2xl overflow-hidden group">
+                                    <img src="https://images.unsplash.com/photo-1541416599272-de3622923984?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                </div>
+                                <div class="relative h-48 rounded-2xl overflow-hidden group">
+                                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="bg-emerald-500/5 dark:bg-emerald-500/10 p-8 rounded-[2.5rem] border border-emerald-500/20">
+                            <h2 class="text-3xl font-black text-emerald-600 dark:text-emerald-400 mb-6">How to Reserve</h2>
+                            <div class="space-y-6">
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-emerald-500/20">
+                                        <Icon name="fa6-solid:1" class="text-white font-bold" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Online via SINAC</h3>
+                                        <p class="text-slate-600 dark:text-slate-400 mb-4">You can buy your tickets directly through the government system. You'll need to create an account first.</p>
+                                        <a href="https://serviciosenlinea.sinac.go.cr/" target="_blank" class="inline-flex items-center gap-2 px-6 py-2 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 transition-colors">
+                                            Visit SINAC Website <Icon name="fa6-solid:arrow-up-right-from-square" class="w-3 h-3" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-blue-500/20">
+                                        <Icon name="fa6-solid:2" class="text-white font-bold" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Through a Tour Operator</h3>
+                                        <p class="text-slate-600 dark:text-slate-400">Most travelers find it easier to let their tour operator handle the reservation, guide, and transportation logistics.</p>
+                                        <a href="/tour-operators" class="text-blue-500 font-bold hover:underline">View Local Operators</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-6">What to Bring</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="flex items-center gap-3 p-4 bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                    <Icon name="fa6-solid:shirt" class="text-blue-500 w-5 h-5" />
+                                    <span class="text-slate-700 dark:text-slate-300">Quick-dry clothing</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-4 bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                    <Icon name="fa6-solid:shoe-prints" class="text-orange-500 w-5 h-5" />
+                                    <span class="text-slate-700 dark:text-slate-300">Hiking boots or closed shoes</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-4 bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                    <Icon name="fa6-solid:bottle-water" class="text-emerald-500 w-5 h-5" />
+                                    <span class="text-slate-700 dark:text-slate-300">2L Water reusable bottle</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-4 bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                    <Icon name="fa6-solid:bug" class="text-purple-500 w-5 h-5" />
+                                    <span class="text-slate-700 dark:text-slate-300">Insect repellent</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-4 bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                    <Icon name="fa6-solid:umbrella" class="text-blue-400 w-5 h-5" />
+                                    <span class="text-slate-700 dark:text-slate-300">Rain poncho</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-4 bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                    <Icon name="fa6-solid:camera" class="text-rose-500 w-5 h-5" />
+                                    <span class="text-slate-700 dark:text-slate-300">Camera & Binoculars</span>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="space-y-8">
+                        <div class="bg-slate-900 rounded-[2rem] p-8 text-white sticky top-24">
+                            <h3 class="text-2xl font-bold mb-4">Entrance Sectors</h3>
+                            <ul class="space-y-4">
+                                <li class="pb-4 border-b border-white/10">
+                                    <span class="block font-bold text-emerald-400">Sirena</span>
+                                    <p class="text-sm text-white/60">The heart of the park. Best for seeing tapirs and monkeys.</p>
+                                </li>
+                                <li class="pb-4 border-b border-white/10">
+                                    <span class="block font-bold text-emerald-400">La Leona</span>
+                                    <p class="text-sm text-white/60">Beach-side trek. Great for turtles and shorebirds.</p>
+                                </li>
+                                <li class="pb-4 border-b border-white/10">
+                                    <span class="block font-bold text-emerald-400">San Pedrillo</span>
+                                    <p class="text-sm text-white/60">Lush waterfalls and primary forest giants.</p>
+                                </li>
+                                <li>
+                                    <span class="block font-bold text-emerald-400">Los Patos</span>
+                                    <p class="text-sm text-white/60">For experienced hikers. Steep jungle trails.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <CallToAction
+                    title="Need help planning?"
+                    description="Our local experts can help you coordinate your Corcovado trip from start to finish."
+                    buttonText="Contact us"
+                />
+            </div>
+        </ContainerFluid>
+    </main>
+</Layout>
+
+<style>
+    @keyframes slow-zoom {
+        from { transform: scale(1); }
+        to { transform: scale(1.1); }
+    }
+    .animate-slow-zoom {
+        animation: slow-zoom 20s ease-in-out infinite alternate;
+    }
+</style>

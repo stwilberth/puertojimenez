@@ -15,49 +15,108 @@ import { Icon } from 'astro-icon/components';
 
                 <div class="space-y-12">
                     <!-- Corcovado National Park -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group">
-                        <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-600 p-8 flex items-center justify-center">
-                            <Icon name="fa6-solid:tree" class="w-20 h-20 text-white/90 group-hover:scale-110 transition-transform duration-300" />
-                        </div>
-                        <div class="p-6">
-                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Explore Corcovado National Park</h2>
-                            <p class="text-gray-600 dark:text-gray-400">
-                                Hike and spot wildlife in one of the most biodiverse places on Earth. Home to countless species including:
-                            </p>
-                            <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 mt-2">
-                                <li>Jaguars and tapirs</li>
-                                <li>Scarlet macaws</li>
-                                <li>Four species of monkeys</li>
-                                <li>Hundreds of bird species</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Marine Life -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group">
-                        <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-600 p-8 flex items-center justify-center">
-                            <Icon name="fa6-solid:water" class="w-20 h-20 text-white/90 group-hover:scale-110 transition-transform duration-300" />
-                        </div>
-                        <div class="p-6">
-                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Marine Life Adventures</h2>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div class="flex gap-3">
-                                    <Icon name="fa6-solid:sailboat" class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
-                                    <div>
-                                        <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-1">Dolphin & Whale Watching</h3>
-                                        <p class="text-gray-600 dark:text-gray-400 text-sm">Take boat tours to see marine life in their natural habitat</p>
-                                    </div>
+                    <a href="/corcovado" class="block group">
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:border-emerald-500/30 transition-all duration-500">
+                            <div class="h-64 bg-gradient-to-br from-green-500 via-emerald-600 to-teal-700 p-8 flex flex-col items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 opacity-20">
+                                    <Icon name="fa6-solid:tree" class="w-full h-full scale-150" />
                                 </div>
-                                <div class="flex gap-3">
-                                    <Icon name="fa6-solid:fish" class="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
+                                <Icon name="fa6-solid:tree" class="w-24 h-24 text-white relative z-10 group-hover:scale-110 transition-transform duration-500" />
+                                <h2 class="text-3xl font-black text-white mt-4 relative z-10">Corcovado National Park</h2>
+                                <div class="absolute bottom-4 right-8 bg-white/20 backdrop-blur-md px-4 py-1 rounded-full border border-white/30 text-white text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
+                                    Learn More
+                                </div>
+                            </div>
+                            <div class="p-8">
+                                <div class="grid md:grid-cols-2 gap-8">
                                     <div>
-                                        <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-1">Snorkeling & Diving</h3>
-                                        <p class="text-gray-600 dark:text-gray-400 text-sm">Discover coral reefs in the Golfo Dulce</p>
+                                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                                            <Icon name="fa6-solid:circle-info" class="text-emerald-500" />
+                                            Important: Daily Capacity
+                                        </h3>
+                                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                            Corcovado is one of the most protected areas in the world. To preserve its beauty, there is a <strong>strict limited daily capacity</strong>. Booking in advance is highly recommended.
+                                        </p>
+                                        
+                                        <div class="space-y-4">
+                                            <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-xl border border-emerald-100 dark:border-emerald-800/30">
+                                                <h4 class="font-bold text-emerald-800 dark:text-emerald-400 mb-1">How to Reserve:</h4>
+                                                <ul class="space-y-2 text-sm text-emerald-700 dark:text-emerald-300">
+                                                    <li class="flex items-start gap-2">
+                                                        <Icon name="fa6-solid:globe" class="w-4 h-4 mt-1 shrink-0" />
+                                                        <span>Online via Official Website</span>
+                                                    </li>
+                                                    <li class="flex items-start gap-2">
+                                                        <Icon name="fa6-solid:id-badge" class="w-4 h-4 mt-1 shrink-0" />
+                                                        <span>Through a certified local operator</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                                            <Icon name="fa6-solid:wand-magic-sparkles" class="text-blue-500" />
+                                            Traveler Tips
+                                        </h3>
+                                        <ul class="space-y-4">
+                                            <li class="flex gap-4">
+                                                <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center shrink-0">
+                                                    <Icon name="fa6-solid:person-hiking" class="text-blue-600 dark:text-blue-400" />
+                                                </div>
+                                                <div>
+                                                    <p class="font-bold text-gray-800 dark:text-gray-200 text-sm">Guides are Mandatory</p>
+                                                    <p class="text-xs text-gray-600 dark:text-gray-400">Entrance to most sectors requires a certified naturalist guide.</p>
+                                                </div>
+                                            </li>
+                                            <li class="flex gap-4">
+                                                <div class="w-10 h-10 rounded-lg bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center shrink-0">
+                                                    <Icon name="fa6-solid:bottle-water" class="text-orange-600 dark:text-orange-400" />
+                                                </div>
+                                                <div>
+                                                    <p class="font-bold text-gray-800 dark:text-gray-200 text-sm">Pack Essentials</p>
+                                                    <p class="text-xs text-gray-600 dark:text-gray-400">Bring 2L of water, sunscreen, repellent, and quick-dry clothing.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
+
+                    <!-- Marine Life -->
+                    <a href="/marine-life" class="block group">
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:border-blue-500/30 transition-all duration-500">
+                            <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-600 p-8 flex items-center justify-center relative overflow-hidden">
+                                <Icon name="fa6-solid:water" class="w-20 h-20 text-white/90 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                                <div class="absolute bottom-4 right-8 bg-white/20 backdrop-blur-md px-4 py-1 rounded-full border border-white/30 text-white text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
+                                    Learn More
+                                </div>
+                            </div>
+                            <div class="p-8">
+                                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Marine Life Adventures</h2>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="flex gap-3">
+                                        <Icon name="fa6-solid:sailboat" class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                                        <div>
+                                            <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-1">Dolphin & Whale Watching</h3>
+                                            <p class="text-gray-600 dark:text-gray-400 text-sm">Take boat tours to see marine life in their natural habitat</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <Icon name="fa6-solid:fish" class="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
+                                        <div>
+                                            <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-1">Bioluminescence</h3>
+                                            <p class="text-gray-600 dark:text-gray-400 text-sm">Discover the magical glowing water at night</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
                     <!-- Water Activities -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group">
