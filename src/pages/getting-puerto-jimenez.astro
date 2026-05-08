@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import ContainerFluid from '../components/ContainerFluid.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Getting to Puerto Jimenez | Travel Guide">
@@ -26,8 +27,9 @@ import ContainerFluid from '../components/ContainerFluid.astro';
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- By Plane Section -->
                 <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                    <div class="h-48 bg-gradient-to-r from-blue-500 to-cyan-400 p-6 flex items-end">
-                        <span class="text-6xl">✈️</span>
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-cyan-400 p-6 flex items-end relative overflow-hidden">
+                        <Icon name="fa6-solid:plane" class="w-24 h-24 text-white/20 absolute -right-4 -top-4 rotate-12" />
+                        <Icon name="fa6-solid:plane" class="w-16 h-16 text-white relative z-10" />
                     </div>
                     <div class="p-6 space-y-4">
                         <h2 class="text-2xl font-bold text-gray-800 dark:text-white">By Plane</h2>
@@ -36,15 +38,21 @@ import ContainerFluid from '../components/ContainerFluid.astro';
                         </p>
                         <div class="space-y-4 border-t border-gray-100 dark:border-gray-700 pt-4">
                             <div class="flex items-center space-x-3 group">
-                                <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">⏱️</span>
+                                <span class="p-2 bg-green-100 dark:bg-green-900 rounded-xl text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                                    <Icon name="fa6-solid:clock" class="w-5 h-5" />
+                                </span>
                                 <span class="text-gray-700 dark:text-gray-300">Flight duration: ~45 minutes</span>
                             </div>
                             <div class="flex items-center space-x-3 group">
-                                <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">💰</span>
+                                <span class="p-2 bg-green-100 dark:bg-green-900 rounded-xl text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                                    <Icon name="fa6-solid:money-bill-wave" class="w-5 h-5" />
+                                </span>
                                 <span class="text-gray-700 dark:text-gray-300">Cost: $100-150 one way</span>
                             </div>
                             <div class="flex items-center space-x-3 group">
-                                <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">🎫</span>
+                                <span class="p-2 bg-green-100 dark:bg-green-900 rounded-xl text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                                    <Icon name="fa6-solid:ticket" class="w-5 h-5" />
+                                </span>
                                 <span class="text-gray-700 dark:text-gray-300">Book through: Sansa or Skyway</span>
                             </div>
                         </div>
@@ -53,8 +61,9 @@ import ContainerFluid from '../components/ContainerFluid.astro';
 
               <!-- By Bus Section -->
               <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                <div class="h-48 bg-gradient-to-r from-yellow-500 to-orange-400 p-6 flex items-end">
-                    <span class="text-6xl">🚌</span>
+                <div class="h-48 bg-gradient-to-r from-yellow-500 to-orange-400 p-6 flex items-end relative overflow-hidden">
+                    <Icon name="fa6-solid:bus" class="w-24 h-24 text-white/20 absolute -right-4 -top-4 rotate-12" />
+                    <Icon name="fa6-solid:bus" class="w-16 h-16 text-white relative z-10" />
                 </div>
                 <div class="p-6 space-y-4">
                     <h2 class="text-2xl font-bold text-gray-800 dark:text-white">By Bus</h2>
@@ -63,15 +72,21 @@ import ContainerFluid from '../components/ContainerFluid.astro';
                     </p>
                     <div class="space-y-4 border-t border-gray-100 dark:border-gray-700 pt-4">
                         <div class="flex items-center space-x-3 group">
-                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">🚌</span>
+                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-xl text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                                <Icon name="fa6-solid:clock" class="w-5 h-5" />
+                            </span>
                             <span class="text-gray-700 dark:text-gray-300">Departs: 12:00 PM daily</span>
                         </div>
                         <div class="flex items-center space-x-3 group">
-                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">⏱️</span>
+                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-xl text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                                <Icon name="fa6-solid:route" class="w-5 h-5" />
+                            </span>
                             <span class="text-gray-700 dark:text-gray-300">Journey: ~8 hours</span>
                         </div>
                         <div class="flex items-center space-x-3 group">
-                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-full text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">💰</span>
+                            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-xl text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                                <Icon name="fa6-solid:money-bill-wave" class="w-5 h-5" />
+                            </span>
                             <span class="text-gray-700 dark:text-gray-300">Cost: ₡12,000 ($24)</span>
                         </div>
                     </div>
