@@ -3,15 +3,15 @@ const currentPath = Astro.url.pathname;
 ---
 
 <nav class="sticky top-0 z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="flex justify-between items-center h-20">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+        <div class="flex justify-between items-center h-20 gap-4">
             <!-- Logo -->
-            <a href="/" class="text-slate-900 dark:text-white text-2xl font-black tracking-tighter hover:text-emerald-500 transition-colors">
+            <a href="/" class="shrink-0 text-slate-900 dark:text-white text-xl xl:text-2xl font-black tracking-tighter hover:text-emerald-500 transition-colors">
                 PUERTO<span class="text-emerald-500">JIMENEZ</span>.INFO
             </a>
 
             <!-- Botón móvil -->
-            <button id="mobile-menu-button" type="button" class="inline-flex md:hidden items-center justify-center p-2 text-slate-700 dark:text-slate-300">
+            <button id="mobile-menu-button" type="button" class="inline-flex lg:hidden items-center justify-center p-2 text-slate-700 dark:text-slate-300">
                 <span class="sr-only">Abrir menú</span>
                 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8h16M4 16h16"></path>
@@ -19,15 +19,16 @@ const currentPath = Astro.url.pathname;
             </button>
 
             <!-- Menú escritorio -->
-            <div class="hidden md:flex md:items-center md:space-x-8">
-                <a href="/" class={`text-sm font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Home</a>
-                <a href="/getting-puerto-jimenez" class={`text-sm font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/getting-puerto-jimenez" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Getting Here</a>
-                <a href="/tours-and-activities" class={`text-sm font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/tours-and-activities" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Activities</a>
-                <a href="/tour-operators" class={`text-sm font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/tour-operators" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Tour Operators</a>
-                <a href="/accommodation" class={`text-sm font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/accommodation" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Stay</a>
-                <a href="/artisans" class={`text-sm font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/artisans" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Artisans</a>
-                <a href="/contact" class={`px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full text-xs font-black uppercase tracking-widest hover:bg-emerald-500 dark:hover:bg-emerald-500 hover:text-white transition-all`}>Contact</a>
-                <button id="theme-toggle" class="p-2 text-slate-700 dark:text-slate-300 hover:text-emerald-500 transition-colors">
+            <div class="hidden lg:flex lg:items-center lg:gap-2 xl:gap-4 2xl:gap-6">
+                <a href="/" class={`whitespace-nowrap text-xs xl:text-sm font-bold uppercase tracking-wider xl:tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Home</a>
+                <a href="/getting-puerto-jimenez" class={`whitespace-nowrap text-xs xl:text-sm font-bold uppercase tracking-wider xl:tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/getting-puerto-jimenez" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Getting Here</a>
+                <a href="/tours-and-activities" class={`whitespace-nowrap text-xs xl:text-sm font-bold uppercase tracking-wider xl:tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/tours-and-activities" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Activities</a>
+                <a href="/rent-a-car" class={`whitespace-nowrap text-xs xl:text-sm font-bold uppercase tracking-wider xl:tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/rent-a-car" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Rent a Car</a>
+                <a href="/tour-operators" class={`whitespace-nowrap text-xs xl:text-sm font-bold uppercase tracking-wider xl:tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/tour-operators" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Tour Operators</a>
+                <a href="/accommodation" class={`whitespace-nowrap text-xs xl:text-sm font-bold uppercase tracking-wider xl:tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/accommodation" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Stay</a>
+                <a href="/artisans" class={`whitespace-nowrap text-xs xl:text-sm font-bold uppercase tracking-wider xl:tracking-widest hover:text-emerald-500 transition-colors ${currentPath === "/artisans" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Artisans</a>
+                <a href="/contact" class={`shrink-0 whitespace-nowrap px-3 xl:px-5 py-2 xl:py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full text-xs font-black uppercase tracking-widest hover:bg-emerald-500 dark:hover:bg-emerald-500 hover:text-white transition-all`}>Contact</a>
+                <button id="theme-toggle" class="shrink-0 p-2 text-slate-700 dark:text-slate-300 hover:text-emerald-500 transition-colors">
                     <span class="dark:hidden text-xl">🌙</span>
                     <span class="hidden dark:inline text-xl">☀️</span>
                 </button>
@@ -35,11 +36,12 @@ const currentPath = Astro.url.pathname;
         </div>
 
         <!-- Menú móvil -->
-        <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border-b border-slate-200 dark:border-slate-800">
+        <div id="mobile-menu" class="hidden lg:hidden absolute w-full left-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border-b border-slate-200 dark:border-slate-800">
             <div class="px-6 pt-4 pb-8 space-y-4">
                 <a href="/" class={`block text-lg font-bold ${currentPath === "/" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Home</a>
                 <a href="/getting-puerto-jimenez" class={`block text-lg font-bold ${currentPath === "/getting-puerto-jimenez" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Getting Here</a>
                 <a href="/tours-and-activities" class={`block text-lg font-bold ${currentPath === "/tours-and-activities" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Activities</a>
+                <a href="/rent-a-car" class={`block text-lg font-bold ${currentPath === "/rent-a-car" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Rent a Car</a>
                 <a href="/tour-operators" class={`block text-lg font-bold ${currentPath === "/tour-operators" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Tour Operators</a>
                 <a href="/accommodation" class={`block text-lg font-bold ${currentPath === "/accommodation" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Stay</a>
                 <a href="/artisans" class={`block text-lg font-bold ${currentPath === "/artisans" ? "text-emerald-500" : "text-slate-600 dark:text-slate-400"}`}>Artisans</a>

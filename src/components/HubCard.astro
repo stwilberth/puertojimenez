@@ -14,7 +14,7 @@ interface Props {
     gradient: string;
     cta?: string;
     featured?: boolean;
-    bgImage?: ImageMetadata;
+    bgImage?: ImageMetadata | string;
     class?: string;
 }
 
@@ -38,12 +38,24 @@ const {
 <a href={href} class:list={['group block', className]}>
     <div class="relative h-full bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-slate-800">
         {bgImage && (
-            <Image
-                src={bgImage}
-                alt={title}
-                width={1200}
-                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
-            />
+            typeof bgImage === 'string' ? (
+                <img
+                    src={bgImage}
+                    alt=""
+                    aria-hidden="true"
+                    width="1200"
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
+                    loading="lazy"
+                />
+            ) : (
+                <Image
+                    src={bgImage as ImageMetadata}
+                    alt=""
+                    aria-hidden="true"
+                    width={1200}
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
+                />
+            )
         )}
         {bgImage && (
             <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/30"></div>

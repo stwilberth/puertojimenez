@@ -22,3 +22,19 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Laravel cache / runtime dirs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+/storage/framework/testing
+/bootstrap/cache
+/storage/logs
+
+# opencode
+/.cache
+/.local
+
+
+# wrangler
+/.wrangler

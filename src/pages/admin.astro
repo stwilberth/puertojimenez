@@ -1,0 +1,352 @@
+---
+export const prerender = true;
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Admin - PuertoJimenez.info</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+  <!-- Login -->
+  <div id="loginView" class="min-h-screen flex items-center justify-center p-6">
+    <div class="w-full max-w-sm bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 p-8">
+      <div class="text-center mb-8">
+        <div class="text-3xl mb-2">🔐</div>
+        <h1 class="text-2xl font-black text-slate-900 dark:text-white">Admin</h1>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Ingresa la contraseña para acceder</p>
+      </div>
+      <form id="loginForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">Contraseña</label>
+          <input id="passInput" type="password" placeholder="••••••••" class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none" required />
+        </div>
+        <p id="loginError" class="hidden text-sm text-red-600 bg-red-50 dark:bg-red-900/30 p-2 rounded"></p>
+        <button type="submit" id="loginBtn" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg transition">Entrar</button>
+      </form>
+      <p class="text-xs text-center text-slate-400 mt-4">PuertoJimenez.info • Dashboard</p>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashView" class="hidden">
+    <!-- Top bar -->
+    <header class="sticky top-0 z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-700">
+      <div class="max-w-7xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
+        <a href="/" class="font-black tracking-tighter text-slate-900 dark:text-white text-xl">PUERTO<span class="text-emerald-500">JIMENEZ</span>.INFO <span class="ml-2 text-xs font-normal bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-2 py-1 rounded-full">ADMIN</span></a>
+        <div class="flex items-center gap-3">
+          <a href="/" class="hidden sm:inline text-sm text-slate-600 dark:text-slate-400 hover:text-emerald-600">← Volver al sitio</a>
+          <button id="logoutBtn" class="px-4 py-2 text-sm font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg">Salir</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 lg:px-6 py-8">
+      <!-- Tabs -->
+      <div class="flex gap-2 mb-8">
+        <button data-tab="imagenes" class="tabBtn active px-5 py-2.5 rounded-full font-bold text-sm bg-slate-900 dark:bg-white text-white dark:text-slate-900">📸 Imágenes (R2 • puertojimenez)</button>
+        <button data-tab="notas" class="tabBtn px-5 py-2.5 rounded-full font-bold text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">📝 Notas</button>
+      </div>
+
+      <!-- IMAGENES TAB -->
+      <section id="tab-imagenes" class="space-y-8">
+        <div class="grid lg:grid-cols-5 gap-6">
+          <!-- Upload card -->
+          <div class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 h-fit">
+            <h2 class="font-bold text-slate-900 dark:text-white text-lg mb-1">Subir imagen</h2>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Se guardará en <code class="bg-slate-100 dark:bg-slate-700 px-1.5 py-0.5 rounded">puertojimenez/</code> en R2</p>
+
+            <form id="uploadForm" class="space-y-4">
+              <div id="dropArea" class="border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl p-6 text-center hover:border-emerald-500 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition cursor-pointer">
+                <div class="text-3xl mb-2">🖼️</div>
+                <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">Arrastra imagen o haz click</p>
+                <p class="text-xs text-slate-400">PNG, JPG, WEBP • máx 15MB</p>
+                <img id="preview" class="hidden mt-4 max-h-40 mx-auto rounded-lg shadow" alt="preview" />
+                <input id="fileInput" type="file" accept="image/*" class="hidden" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">Nombre (opcional)</label>
+                <input id="nombreInput" type="text" placeholder="ej: tour-corcovado" class="w-full px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-emerald-500 outline-none text-sm" />
+                <p class="text-xs text-slate-400 mt-1">Se usará como nombre de archivo. Si lo dejas vacío se usa el original.</p>
+              </div>
+
+              <div id="uploadProgress" class="hidden">
+                <div class="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                  <div id="progressBar" class="h-full bg-emerald-500 w-0 transition-all"></div>
+                </div>
+                <p id="progressText" class="text-xs text-slate-500 mt-1">Subiendo...</p>
+              </div>
+
+              <p id="uploadMsg" class="hidden text-sm p-3 rounded-lg"></p>
+
+              <button type="submit" id="uploadBtn" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold rounded-xl transition">Subir a R2</button>
+            </form>
+          </div>
+
+          <!-- Gallery -->
+          <div class="lg:col-span-3 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="font-bold text-slate-900 dark:text-white">Galería <span id="imgCount" class="ml-1 font-normal text-sm text-slate-500"></span></h2>
+              <button id="refreshImgs" class="text-sm px-3 py-1.5 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 rounded-lg">↻ Refrescar</button>
+            </div>
+            <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 gap-4 min-h-[200px]">
+              <p class="col-span-full text-center text-slate-400 py-10">Cargando...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NOTAS TAB -->
+      <section id="tab-notas" class="hidden space-y-6">
+        <div class="grid lg:grid-cols-5 gap-6">
+          <div class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 h-fit">
+            <h2 id="notaFormTitle" class="font-bold text-slate-900 dark:text-white text-lg mb-1">Nueva nota</h2>
+            <p class="text-sm text-slate-500 mb-4">Las notas se guardan en <code class="bg-slate-100 dark:bg-slate-700 px-1 py-0.5 rounded">puertojimenez/notas.json</code></p>
+            <form id="notaForm" class="space-y-3">
+              <input type="hidden" id="notaId" />
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">Título</label>
+                <input id="notaTitulo" type="text" placeholder="Ej: Recordatorio..." class="w-full px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-emerald-500 outline-none text-sm" required />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">Contenido</label>
+                <textarea id="notaContenido" rows="6" placeholder="Escribe la nota..." class="w-full px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-emerald-500 outline-none text-sm" required></textarea>
+              </div>
+              <p id="notaMsg" class="hidden text-sm p-2 rounded-lg"></p>
+              <div class="flex gap-2">
+                <button type="submit" id="notaSubmitBtn" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition">Guardar nota</button>
+                <button type="button" id="notaCancelBtn" class="hidden px-4 py-2.5 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 rounded-xl text-sm font-semibold">Cancelar</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="lg:col-span-3 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="font-bold text-slate-900 dark:text-white">Notas <span id="notasCount" class="ml-1 font-normal text-sm text-slate-500"></span></h2>
+              <button id="refreshNotas" class="text-sm px-3 py-1.5 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 rounded-lg">↻ Refrescar</button>
+            </div>
+            <div id="notasList" class="space-y-3">
+              <p class="text-center text-slate-400 py-10">Cargando notas...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+<script is:inline>
+let editingNotaId = null;
+const HARDCODED_PASS = 'Jair2018_*';
+
+async function checkAuth(){
+  // Intenta validación server (Node adapter). Si falla (404 en Apache estático), usa localStorage fallback
+  try{
+    const r=await fetch('/api/admin/check');
+    if(r.ok){
+      const j=await r.json();
+      if(j.ok===true) return true;
+      // server respondió pero no auth -> revisa localStorage como fallback
+    } else if(r.status!==404){
+      return false;
+    }
+  }catch{}
+  return localStorage.getItem('admin_auth') === HARDCODED_PASS;
+}
+async function showDash(isAuth){
+  if(isAuth){ document.getElementById('loginView').classList.add('hidden'); document.getElementById('dashView').classList.remove('hidden'); loadGallery(); loadNotas(); }
+  else { document.getElementById('loginView').classList.remove('hidden'); document.getElementById('dashView').classList.add('hidden'); }
+}
+checkAuth().then(showDash);
+
+// login
+document.getElementById('loginForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const pass=document.getElementById('passInput').value;
+  const btn=document.getElementById('loginBtn'), err=document.getElementById('loginError');
+  btn.disabled=true; btn.textContent='Verificando...'; err.classList.add('hidden');
+  try{
+    // intenta login server primero
+    try{
+      const r=await fetch('/api/admin/login',{method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({password: pass})});
+      if(r.ok){
+        const j=await r.json();
+        if(j.ok) { await showDash(true); return; }
+        throw new Error(j.error||'Contraseña incorrecta');
+      } else if(r.status!==404){
+        const j=await r.json().catch(()=>({})); throw new Error(j.error||'Contraseña incorrecta');
+      }
+      // 404 -> fallback a validación local
+    }catch(fetchErr){
+      if(fetchErr.message && fetchErr.message.includes('Contraseña incorrecta')) throw fetchErr;
+      // fallback
+    }
+    if(pass === HARDCODED_PASS){
+      localStorage.setItem('admin_auth', HARDCODED_PASS);
+      await showDash(true);
+    } else {
+      throw new Error('Contraseña incorrecta');
+    }
+  }catch(err2){
+    err.textContent=err2.message; err.classList.remove('hidden');
+  } finally { btn.disabled=false; btn.textContent='Entrar'; }
+});
+document.getElementById('logoutBtn').addEventListener('click', async()=>{
+  try{ await fetch('/api/admin/logout',{method:'POST'}); }catch{}
+  localStorage.removeItem('admin_auth');
+  location.reload();
+});
+
+// tabs
+document.querySelectorAll('.tabBtn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tabBtn').forEach(b=>{ b.classList.remove('active','bg-slate-900','dark:bg-white','text-white','dark:text-slate-900'); b.classList.add('bg-white','dark:bg-slate-800','border','border-slate-200','dark:border-slate-700','text-slate-700','dark:text-slate-300'); });
+    btn.classList.add('active','bg-slate-900','dark:bg-white','text-white','dark:text-slate-900'); btn.classList.remove('bg-white','dark:bg-slate-800','border','text-slate-700','dark:text-slate-300');
+    const tab=btn.dataset.tab;
+    document.getElementById('tab-imagenes').classList.toggle('hidden', tab!=='imagenes');
+    document.getElementById('tab-notas').classList.toggle('hidden', tab!=='notas');
+  });
+});
+
+// upload
+const dropArea=document.getElementById('dropArea'), fileInput=document.getElementById('fileInput'), preview=document.getElementById('preview'), nombreInput=document.getElementById('nombreInput');
+dropArea.addEventListener('click', ()=> fileInput.click());
+dropArea.addEventListener('dragover', e=>{ e.preventDefault(); dropArea.classList.add('border-emerald-500','bg-emerald-50'); });
+dropArea.addEventListener('dragleave', ()=> dropArea.classList.remove('border-emerald-500','bg-emerald-50'));
+dropArea.addEventListener('drop', e=>{ e.preventDefault(); dropArea.classList.remove('border-emerald-500','bg-emerald-50'); if(e.dataTransfer.files[0]) { fileInput.files=e.dataTransfer.files; handleFile(e.dataTransfer.files[0]); }});
+fileInput.addEventListener('change', ()=>{ if(fileInput.files[0]) handleFile(fileInput.files[0]); });
+function handleFile(file){
+  if(!file.type.startsWith('image/')) return;
+  preview.src=URL.createObjectURL(file); preview.classList.remove('hidden');
+  if(!nombreInput.value) nombreInput.value=file.name.replace(/\.[^/.]+$/,'');
+}
+document.getElementById('uploadForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const file=fileInput.files[0];
+  const nombre=nombreInput.value.trim();
+  const msg=document.getElementById('uploadMsg'), btn=document.getElementById('uploadBtn'), prog=document.getElementById('uploadProgress'), bar=document.getElementById('progressBar'), ptxt=document.getElementById('progressText');
+  if(!file) { msg.textContent='Selecciona una imagen'; msg.className='text-sm p-3 rounded-lg bg-red-50 text-red-700 dark:bg-red-900/30'; msg.classList.remove('hidden'); return; }
+  const fd=new FormData(); fd.append('file', file); fd.append('nombre', nombre);
+  btn.disabled=true; btn.textContent='Subiendo...'; prog.classList.remove('hidden'); bar.style.width='30%'; ptxt.textContent='Subiendo a R2...'; msg.classList.add('hidden');
+  try{
+    const r=await fetch('/api/r2/upload',{method:'POST', body: fd});
+    bar.style.width='80%';
+    const j=await r.json();
+    if(!r.ok || !j.ok) throw new Error(j.error||'Error al subir');
+    bar.style.width='100%'; ptxt.textContent='¡Listo!';
+    msg.textContent='✅ Imagen subida: '+j.filename+' → '+j.key; msg.className='text-sm p-3 rounded-lg bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30'; msg.classList.remove('hidden');
+    fileInput.value=''; preview.classList.add('hidden'); nombreInput.value=''; loadGallery();
+    setTimeout(()=>{ prog.classList.add('hidden'); bar.style.width='0'; },1500);
+  }catch(err){ msg.textContent='❌ '+(err.message||'Error'); msg.className='text-sm p-3 rounded-lg bg-red-50 text-red-700 dark:bg-red-900/30'; msg.classList.remove('hidden'); prog.classList.add('hidden'); }
+  finally{ btn.disabled=false; btn.textContent='Subir a R2'; }
+});
+
+async function loadGallery(){
+  const gal=document.getElementById('gallery'), cnt=document.getElementById('imgCount');
+  gal.innerHTML='<p class="col-span-full text-center text-slate-400 py-10">Cargando...</p>';
+  try{
+    const r=await fetch('/api/r2/list'); const j=await r.json();
+    if(!r.ok || !j.ok) throw new Error(j.error);
+    cnt.textContent='('+j.items.length+')';
+    if(!j.items.length){ gal.innerHTML='<p class="col-span-full text-center text-slate-400 py-10">No hay imágenes aún en puertojimenez/</p>'; return; }
+    gal.innerHTML=j.items.map(it=>`
+      <div class="group bg-slate-50 dark:bg-slate-700/50 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-600">
+        <div class="aspect-square bg-slate-200 dark:bg-slate-600 overflow-hidden">
+          ${it.url?`<img src="${it.url}" alt="${it.name}" class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy"/>`:`<div class="w-full h-full flex items-center justify-center text-3xl">🖼️</div>`}
+        </div>
+        <div class="p-3">
+          <p class="text-xs font-mono truncate text-slate-700 dark:text-slate-300" title="${it.key}">${it.name}</p>
+          <p class="text-[11px] text-slate-400">${it.size? (it.size/1024).toFixed(1)+' KB • ':''}${new Date(it.lastModified).toLocaleDateString()}</p>
+          <div class="flex gap-1 mt-2">
+            ${it.url?`<a href="${it.url}" target="_blank" class="flex-1 text-center text-xs px-2 py-1.5 bg-white dark:bg-slate-800 border rounded-lg hover:bg-emerald-50">Ver</a><button onclick="navigator.clipboard.writeText('${it.url}'); this.textContent='¡Copiado!'; setTimeout(()=>this.textContent='Copiar URL',1500)" class="flex-1 text-xs px-2 py-1.5 bg-emerald-600 text-white rounded-lg">Copiar URL</button>`:`<span class="text-xs text-slate-400">Configura R2_PUBLIC_URL para ver URL</span>`}
+            <button onclick="deleteImg('${it.key}')" class="px-2 py-1.5 text-xs bg-red-50 dark:bg-red-900/30 text-red-600 rounded-lg hover:bg-red-100">🗑️</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }catch(e){ gal.innerHTML='<p class="col-span-full text-center text-red-500 py-10">Error: '+e.message+'</p>'; }
+}
+document.getElementById('refreshImgs').addEventListener('click', loadGallery);
+async function deleteImg(key){
+  if(!confirm('¿Borrar '+key+'?')) return;
+  const r=await fetch('/api/r2/delete',{method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({key})}); const j=await r.json();
+  if(j.ok) loadGallery(); else alert('Error: '+(j.error||''));
+}
+
+// NOTAS
+async function loadNotas(){
+  const list=document.getElementById('notasList'), cnt=document.getElementById('notasCount');
+  list.innerHTML='<p class="text-center text-slate-400 py-10">Cargando notas...</p>';
+  try{
+    const r=await fetch('/api/notas/list'); const j=await r.json();
+    if(!r.ok||!j.ok) throw new Error(j.error);
+    cnt.textContent='('+j.notas.length+')';
+    if(!j.notas.length){ list.innerHTML='<p class="text-center text-slate-400 py-10">No hay notas aún. Crea la primera.</p>'; return; }
+    list.innerHTML=j.notas.map(n=>`
+      <div class="p-4 bg-slate-50 dark:bg-slate-700/50 rounded-xl border border-slate-200 dark:border-slate-600">
+        <div class="flex justify-between gap-3">
+          <h3 class="font-bold text-slate-900 dark:text-white text-sm">${escapeHtml(n.titulo)}</h3>
+          <span class="text-[11px] text-slate-400 shrink-0">${new Date(n.fecha).toLocaleString()}</span>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mt-1 whitespace-pre-wrap">${escapeHtml(n.contenido)}</p>
+        <div class="flex gap-2 mt-3">
+          <button onclick="editNota('${n.id}','${escapeAttr(n.titulo)}','${escapeAttr(n.contenido)}')" class="text-xs px-3 py-1.5 bg-white dark:bg-slate-800 border rounded-lg">✏️ Editar</button>
+          <button onclick="delNota('${n.id}')" class="text-xs px-3 py-1.5 bg-red-50 dark:bg-red-900/30 text-red-600 rounded-lg">🗑️ Borrar</button>
+        </div>
+      </div>
+    `).join('');
+  }catch(e){ list.innerHTML='<p class="text-center text-red-500 py-10">Error: '+e.message+'</p>'; }
+}
+function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function escapeAttr(s){ return s.replace(/'/g,"&#39;").replace(/"/g,'&quot;').replace(/\n/g,'\\n'); }
+
+document.getElementById('notaForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const id=document.getElementById('notaId').value;
+  const titulo=document.getElementById('notaTitulo').value.trim();
+  const contenido=document.getElementById('notaContenido').value.trim();
+  const msg=document.getElementById('notaMsg'), btn=document.getElementById('notaSubmitBtn');
+  if(!titulo||!contenido){ msg.textContent='Título y contenido requeridos'; msg.className='text-sm p-2 rounded-lg bg-red-50 text-red-700'; msg.classList.remove('hidden'); return; }
+  btn.disabled=true; btn.textContent='Guardando...'; msg.classList.add('hidden');
+  try{
+    const r=await fetch('/api/notas/save',{method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({id: id||undefined, titulo, contenido})});
+    const j=await r.json(); if(!r.ok||!j.ok) throw new Error(j.error);
+    msg.textContent=id?'✅ Nota actualizada':'✅ Nota creada'; msg.className='text-sm p-2 rounded-lg bg-emerald-50 text-emerald-700'; msg.classList.remove('hidden');
+    resetNotaForm(); loadNotas();
+  }catch(err){ msg.textContent='❌ '+err.message; msg.className='text-sm p-2 rounded-lg bg-red-50 text-red-700'; msg.classList.remove('hidden'); }
+  finally{ btn.disabled=false; btn.textContent= editingNotaId? 'Actualizar nota':'Guardar nota'; }
+});
+document.getElementById('notaCancelBtn').addEventListener('click', resetNotaForm);
+document.getElementById('refreshNotas').addEventListener('click', loadNotas);
+function editNota(id,titulo,contenido){
+  editingNotaId=id;
+  document.getElementById('notaId').value=id;
+  document.getElementById('notaTitulo').value=titulo.replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/\\n/g,'\n');
+  document.getElementById('notaContenido').value=contenido.replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/\\n/g,'\n');
+  document.getElementById('notaFormTitle').textContent='Editar nota';
+  document.getElementById('notaSubmitBtn').textContent='Actualizar nota';
+  document.getElementById('notaCancelBtn').classList.remove('hidden');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function resetNotaForm(){
+  editingNotaId=null;
+  document.getElementById('notaId').value='';
+  document.getElementById('notaTitulo').value='';
+  document.getElementById('notaContenido').value='';
+  document.getElementById('notaFormTitle').textContent='Nueva nota';
+  document.getElementById('notaSubmitBtn').textContent='Guardar nota';
+  document.getElementById('notaCancelBtn').classList.add('hidden');
+}
+async function delNota(id){
+  if(!confirm('¿Borrar esta nota?')) return;
+  const r=await fetch('/api/notas/delete',{method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({id})}); const j=await r.json();
+  if(j.ok) loadNotas(); else alert('Error: '+(j.error||''));
+}
+</script>
+</body>
+</html>

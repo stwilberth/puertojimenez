@@ -5,6 +5,8 @@ import ContainerFluid from '../components/ContainerFluid.astro';
 import Nav from '../components/Nav.astro';
 import { Image } from 'astro:assets';
 import puertoJimenezMap from '../assets/golfito_to_puerto_jimenez1.png';
+import { R2_IMAGES } from '../lib/r2-images';
+const hasR2 = !!import.meta.env.R2_PUBLIC_URL;
 ---
 
 <Layout title="Getting to Puerto Jimenez by Bus | Travel Guide">
@@ -228,12 +230,16 @@ import puertoJimenezMap from '../assets/golfito_to_puerto_jimenez1.png';
                     <div class="mt-8">
                         <h4 class="font-semibold text-gray-800 dark:text-white mb-3">Destination Map</h4>
                         <div class="rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
-                            <Image
-                                src={puertoJimenezMap}
-                                alt="Map showing Puerto Jiménez and the Osa Peninsula"
-                                width={1200}
-                                class="w-full h-auto"
-                            />
+                            {hasR2 ? (
+                                <img src={R2_IMAGES.mapaGolfito} alt="Map showing Puerto Jiménez and the Osa Peninsula" width="1200" class="w-full h-auto" loading="lazy" />
+                            ) : (
+                                <Image
+                                    src={puertoJimenezMap}
+                                    alt="Map showing Puerto Jiménez and the Osa Peninsula"
+                                    width={1200}
+                                    class="w-full h-auto"
+                                />
+                            )}
                         </div>
                     </div>
                 </div>

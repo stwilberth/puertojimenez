@@ -1,0 +1,24 @@
+{
+  "prefix": "puertojimenez/",
+  "bucket": "wilberth",
+  "publicUrl": "https://cdn.wilberth.com",
+  "mappings": {
+    "public/images/de-golfito-a-puerto-jimenez.jpeg": "https://cdn.wilberth.com/puertojimenez/images/golfito-puerto-jimenez-ferry.jpeg",
+    "public/images/golfito_to_puerto_jimenez.png": "https://cdn.wilberth.com/puertojimenez/images/ruta-golfito-puerto-jimenez.png",
+    "public/images/tracopa.jpeg": "https://cdn.wilberth.com/puertojimenez/images/horario-tracopa-san-jose-golfito.jpeg",
+    "public/images/tracopa_2.jpeg": "https://cdn.wilberth.com/puertojimenez/images/horario-tracopa-san-jose-golfito-detalle.jpeg",
+    "public/images/logo.webp": "https://cdn.wilberth.com/puertojimenez/images/logo-puertojimenez.webp",
+    "public/images/default.jpg": "https://cdn.wilberth.com/puertojimenez/images/default-cover.jpg",
+    "src/assets/golfito_to_puerto_jimenez1.png": "https://cdn.wilberth.com/puertojimenez/assets/mapa-golfito-puerto-jimenez.png",
+    "src/assets/puerto_jimenez_map.jpg": "https://cdn.wilberth.com/puertojimenez/assets/mapa-puerto-jimenez.jpg",
+    "src/assets/claudia_elizondo.jpeg": "https://cdn.wilberth.com/puertojimenez/assets/artesana-claudia-elizondo.jpg",
+    "src/assets/claudia_elizondo_products.jpeg": "https://cdn.wilberth.com/puertojimenez/assets/artesana-claudia-elizondo-productos.jpeg",
+    "src/assets/elizabeth_ramirez.jpeg": "https://cdn.wilberth.com/puertojimenez/assets/artesana-elizabeth-ramirez.jpg",
+    "src/assets/elizabeth_ramirez_products.jpeg": "https://cdn.wilberth.com/puertojimenez/assets/artesana-elizabeth-ramirez-productos.jpeg",
+    "src/assets/elmer_rodriguez.jpeg": "https://cdn.wilberth.com/puertojimenez/assets/artesano-elmer-rodriguez.jpg",
+    "src/assets/elmer_rodriguez_products.jpeg": "https://cdn.wilberth.com/puertojimenez/assets/artesano-elmer-rodriguez-productos.jpeg",
+    "src/assets/hubert_loria.jpg": "https://cdn.wilberth.com/puertojimenez/assets/artesano-hubert-loria.jpg",
+    "src/assets/hubert_loria_products.jpeg": "https://cdn.wilberth.com/puertojimenez/assets/artesano-hubert-loria-productos.jpeg",
+    "src/assets/WhatsApp Image 2026-04-23 at 8.09.34 PM.jpeg": "https://cdn.wilberth.com/puertojimenez/assets/horario-lancha-golfo-dulce.jpeg"
+  }
+}

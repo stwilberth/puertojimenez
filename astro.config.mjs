@@ -2,8 +2,15 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import icon from 'astro-icon';
+import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), icon()]
+  output: 'static',
+  adapter: node({ mode: 'standalone' }),
+  integrations: [tailwind(), react(), icon()],
+  image: {
+    domains: ['pub-*.r2.dev', 'r2.cloudflarestorage.com'],
+    remotePatterns: [{ protocol: 'https' }],
+  },
 });

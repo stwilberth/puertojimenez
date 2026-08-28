@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import ContainerFluid from '../components/ContainerFluid.astro';
+
+const ecWhatsApp = '50670040079';
+const ecEmail = 'reservaciones@ecrentacar.cr';
+const ecEmailLsanchez = 'lsanchez@ecrentacar.cr';
+const ecPhone = '+506 7004-0079';
+const baseImg = 'https://ecrentacar.com/uploads/vehicles/';
+
+const vehicles = [
+  { code: 'CFAR', type: 'SUV', name: 'Compact SUV 4x4', model: 'Suzuki Jimny', img: '1781303430542_SUZUKI_JIMNY_.png', passengers: 4, luggage: 2, doors: 5, gearbox: 'Manual' },
+  { code: 'FFAR', type: 'SUV', name: 'Full Side SUV', model: 'Toyota RAV4', img: '1781303480597_TOYOTA_RAV4.png', passengers: 5, luggage: 3, doors: 5, gearbox: 'Automatic' },
+  { code: 'FPMR', type: 'Pickup', name: 'Pick Up 4x4', model: 'Mitsubishi L200', img: '1781303537615_MITSUBISHI_L_200.png', passengers: 5, luggage: 3, doors: 4, gearbox: 'Manual' },
+  { code: 'ICAR', type: 'Intermediate', name: 'Intermediate Automatic', model: 'Kia Rio', img: '1781303807808_KIA_RIO.png', passengers: 5, luggage: 2, doors: 5, gearbox: 'Automatic' },
+  { code: 'IFAR', type: 'SUV 4x4', name: 'Midside SUV 4x4', model: 'Mitsubishi ASX / Suzuki Vitara', img: '1781303964618_MITSUBISHI_ASX.png', passengers: 5, luggage: 2, doors: 5, gearbox: 'Automatic' },
+  { code: 'IFMR', type: 'SUV 4x2', name: 'Midsize SUV 4x2', model: 'Suzuki Grand Vitara', img: '1781304265287_SUZUKI_VITARA_4X2.png', passengers: 5, luggage: 2, doors: 5, gearbox: 'Manual' },
+  { code: 'IGAR', type: 'Crossover', name: 'Crossover 4x2', model: 'Mitsubishi Eclipse Cross', img: '1781304804691_MITSUBISHI_ECLIPSE_CROSS.png', passengers: 5, luggage: 2, doors: 5, gearbox: 'Automatic' },
+  { code: 'LFAR', type: 'Luxury', name: 'Luxury 4x4', model: 'Isuzu MU-X', img: '1781304354216_MUX_CROSS_LATERAL.png', passengers: 7, luggage: 2, doors: 5, gearbox: 'Automatic' },
+  { code: 'PVBR', type: 'Van', name: 'Premium Van 4x4', model: 'Hyundai Staria', img: '1781304394262_HYUNDAI_STARIA.png', passengers: 11, luggage: 3, doors: 3, gearbox: 'Automatic' },
+  { code: 'SFAR', type: 'SUV 4x4', name: 'Standard SUV 4x4', model: 'Kia Sportage', img: '1781304435241_KIA_SPORTAGE.png', passengers: 5, luggage: 2, doors: 5, gearbox: 'Automatic' },
+  { code: 'XFAR', type: 'SUV 4x2', name: 'Special SUV 4x2', model: 'Suzuki Vitara 4x4', img: '1781304674447_SUZUKI_VITARA_4X4.png', passengers: 7, luggage: 3, doors: 5, gearbox: 'Manual' },
+];
+
+const services = [
+  { icon: '🛠️', title: 'Roadside Assistance 24/7', desc: 'Available country-wide for breakdowns and accidents.' },
+  { icon: '🔄', title: 'One-Way Rentals', desc: 'Pick up in one location and return in another (extra fee may apply).' },
+  { icon: '👥', title: 'Additional Drivers', desc: 'Add extra drivers who meet license & age requirements.' },
+  { icon: '🐾', title: 'Pet Friendly', desc: 'Travel with your pet — just return the car clean.' },
+  { icon: '🧳', title: 'Luggage Space', desc: 'Vehicles sized for every trip, from 1 to 3 suitcases.' },
+  { icon: '🛡️', title: 'Full Insurance Options', desc: 'Choose the coverage that fits your rental.' },
+];
+
+const requirements = [
+  { icon: '🛂', title: 'Valid Passport', desc: 'With entry stamp for tourists.' },
+  { icon: '🪪', title: "Driver's License", desc: "Valid license from your country — no international needed for English licenses." },
+  { icon: '💳', title: 'Credit Card', desc: "Principal card in the renter's name for the security deposit." },
+  { icon: '🎂', title: 'Min. Age 21', desc: 'Drivers 18–20 pay a young-driver surcharge (approx. $10/day).' },
+];
+
+const branches = [
+  { icon: '🏢', name: 'Central Office', location: 'Alajuela / San José' },
+  { icon: '🌴', name: 'Guanacaste Branch', location: 'Liberia' },
+  { icon: '🌊', name: 'Pacific Branch', location: 'Uvita / Quepos' },
+  { icon: '🛣️', name: 'Peñas Blancas', location: 'Border crossing (PB)' },
+];
+---
+
+<Layout title="Rent a Car in Costa Rica - Puerto Jiménez"
+    description="Rent a car in Costa Rica through EC Rent A Car, arranged by Puerto Jiménez. SUVs, pickups, vans and economy cars. Book via WhatsApp or email."
+    image="https://ecrentacar.com/uploads/vehicles/1781303480597_TOYOTA_RAV4.png">
+    <main>
+        <Nav />
+        <ContainerFluid>
+            <div class="max-w-4xl mx-auto py-12">
+                <h1 class="text-4xl font-bold text-center mb-4 text-gray-800 dark:text-white">Rent a Car in Costa Rica</h1>
+                <p class="text-center text-gray-600 dark:text-gray-300 mb-8">
+                    Vehicle rental with <strong>EC Rent A Car</strong> — arranged by <strong>Puerto Jiménez</strong>
+                </p>
+
+                <!-- Referral -->
+                <div class="bg-emerald-50 dark:bg-emerald-900/40 border border-emerald-200 dark:border-emerald-800 rounded-lg p-6 mb-10">
+                    <h2 class="text-xl font-bold text-emerald-900 dark:text-emerald-300 mb-2">🦜 Book Through Puerto Jiménez</h2>
+                    <p class="text-sm text-emerald-800 dark:text-emerald-200 mb-4">
+                        Mention <strong>"I come from Puerto Jiménez"</strong> when you contact EC Rent A Car for priority support.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href={`https://wa.me/${ecWhatsApp}?text=${encodeURIComponent("Hello, I'm a client of Puerto Jiménez and I'm interested in renting a vehicle in Costa Rica. Can you help me?")}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-2.5 bg-emerald-600 text-white text-sm font-semibold rounded-md hover:bg-emerald-700 transition-colors duration-300">
+                            💬 Book via WhatsApp
+                        </a>
+                        <a href={`mailto:${ecEmail}?subject=${encodeURIComponent('Vehicle Reservation - Referred by Puerto Jiménez')}&body=${encodeURIComponent("Hello EC Rent A Car,\n\nI'm interested in renting a vehicle in Costa Rica.\n\nI was referred by Puerto Jiménez.\n\nPlease provide information on availability and rates.\n\nThank you.")}`} class="inline-flex items-center px-5 py-2.5 bg-white border border-emerald-300 text-emerald-800 text-sm font-semibold rounded-md hover:bg-emerald-100 dark:bg-slate-800 dark:border-emerald-700 dark:text-emerald-300 dark:hover:bg-slate-700 transition-colors duration-300">
+                            ✉️ Book via Email
+                        </a>
+                        <a href={`mailto:${ecEmailLsanchez}?subject=${encodeURIComponent('Vehicle Reservation - Referred by Puerto Jiménez')}&body=${encodeURIComponent("Hello L. Sanchez (EC Rent A Car),\n\nI'm interested in renting a vehicle in Costa Rica.\n\nI was referred by Puerto Jiménez.\n\nPlease provide information on availability and rates.\n\nThank you.")}`} class="inline-flex items-center px-5 py-2.5 bg-white border border-emerald-300 text-emerald-800 text-sm font-semibold rounded-md hover:bg-emerald-100 dark:bg-slate-800 dark:border-emerald-700 dark:text-emerald-300 dark:hover:bg-slate-700 transition-colors duration-300">
+                            ✉️ L. Sánchez
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Fleet -->
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 dark:text-white">Choose Your Vehicle</h2>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">11 vehicle categories — from SUVs and pickups to 11-passenger vans.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    {vehicles.map(v => (
+                        <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-100 dark:border-gray-700 transition-transform duration-300 hover:-translate-y-1">
+                            <div class="aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden">
+                                <img src={`${baseImg}${v.img}`} alt={v.model} loading="lazy" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                            </div>
+                            <div class="p-5">
+                                <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-300">{v.type}</span>
+                                <h3 class="mt-3 font-semibold text-gray-900 dark:text-white text-lg">{v.name}</h3>
+                                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{v.model} or similar</p>
+                                <div class="mt-3 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-gray-300">
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">👤 {v.passengers}</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">🧳 {v.luggage}</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">🚪 {v.doors}</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">⚙️ {v.gearbox}</span>
+                                </div>
+                                <a href={`https://wa.me/${ecWhatsApp}?text=${encodeURIComponent(`Hello, I'm a client of Puerto Jiménez. Is the ${v.name} (${v.model}) available?`)}`} target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center px-4 py-2 bg-emerald-600 text-white text-sm font-semibold rounded-md hover:bg-emerald-700 transition-colors duration-300">
+                                    💬 Ask availability
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <!-- Services -->
+                <div class="mb-12">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-gray-800 dark:text-white">Our Services</h2>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {services.map(s => (
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-sm border border-gray-100 dark:border-gray-700">
+                                <div class="text-2xl">{s.icon}</div>
+                                <h3 class="mt-3 font-semibold text-gray-900 dark:text-white">{s.title}</h3>
+                                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{s.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <!-- Requirements -->
+                <div class="mb-12">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-gray-800 dark:text-white">Requirements</h2>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {requirements.map(r => (
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-sm border border-gray-100 dark:border-gray-700 text-center">
+                                <div class="text-3xl">{r.icon}</div>
+                                <h3 class="mt-3 font-semibold text-gray-900 dark:text-white">{r.title}</h3>
+                                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{r.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <!-- Branches -->
+                <div class="mb-12">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-gray-800 dark:text-white">Branches</h2>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {branches.map(b => (
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-sm border border-gray-100 dark:border-gray-700 text-center">
+                                <div class="text-3xl">{b.icon}</div>
+                                <h3 class="mt-3 font-semibold text-gray-900 dark:text-white">{b.name}</h3>
+                                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{b.location}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div class="mt-8 flex flex-wrap justify-center gap-3">
+                        <a href={`tel:+${ecWhatsApp}`} class="inline-flex items-center px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold rounded-md hover:bg-emerald-600 dark:hover:bg-emerald-500 hover:text-white transition-colors duration-300">📞 {ecPhone}</a>
+                        <a href={`mailto:${ecEmail}`} class="inline-flex items-center px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold rounded-md hover:bg-emerald-600 dark:hover:bg-emerald-500 hover:text-white transition-colors duration-300">✉️ {ecEmail}</a>
+                        <a href={`mailto:${ecEmailLsanchez}`} class="inline-flex items-center px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold rounded-md hover:bg-emerald-600 dark:hover:bg-emerald-500 hover:text-white transition-colors duration-300">✉️ L. Sánchez ({ecEmailLsanchez})</a>
+                    </div>
+                </div>
+
+                <!-- Final CTA -->
+                <div class="bg-gradient-to-br from-emerald-700 to-teal-800 rounded-lg p-10 text-center text-white">
+                    <div class="text-4xl">🚗</div>
+                    <h2 class="mt-3 text-3xl font-bold">Ready for Your Trip?</h2>
+                    <p class="mt-3 text-emerald-100 max-w-xl mx-auto">Contact us and we'll help you reserve the perfect vehicle to explore Costa Rica.</p>
+                    <div class="mt-8 flex flex-wrap justify-center gap-3">
+                        <a href={`https://wa.me/${ecWhatsApp}?text=${encodeURIComponent("Hello, I'm a client of Puerto Jiménez and I want to rent a vehicle.")}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-white text-emerald-800 font-semibold rounded-md hover:bg-emerald-50 transition-colors duration-300">
+                            💬 Reserve Now via WhatsApp
+                        </a>
+                        <a href={`mailto:${ecEmail}?subject=${encodeURIComponent('Vehicle Reservation - Referred by Puerto Jiménez')}`} class="inline-flex items-center px-6 py-3 border border-white/40 text-white font-semibold rounded-md hover:bg-white/10 transition-colors duration-300">
+                            ✉️ Book via Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </ContainerFluid>
+    </main>
+</Layout>

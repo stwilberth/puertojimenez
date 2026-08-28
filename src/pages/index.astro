@@ -7,8 +7,11 @@ import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 import { Image, type ImageMetadata } from 'astro:assets';
 import puertoJimenezMap from '../assets/puerto_jimenez_map.jpg';
+import { R2_IMAGES } from '../lib/r2-images';
 
 const artists = await getCollection('artists');
+const hasR2 = !!import.meta.env.R2_PUBLIC_URL;
+const puertoMapForCard = hasR2 ? R2_IMAGES.mapaPuertoJimenez : puertoJimenezMap;
 ---
 
 <Layout title="Welcome to Puerto Jimenez">
@@ -47,7 +50,7 @@ const artists = await getCollection('artists');
                         gradient="from-blue-900/40 to-cyan-700/20"
                         cta="Explore Routes"
                         featured
-                        bgImage={puertoJimenezMap}
+                        bgImage={puertoMapForCard}
                         class="lg:col-span-3 lg:row-span-2"
                     />
 
@@ -69,19 +72,18 @@ const artists = await getCollection('artists');
                             <div class="absolute inset-0 z-0">
                                 <div class="swiper artisan-mini-swiper h-full w-full">
                                     <div class="swiper-wrapper">
-                                        {artists.map(artist => (
+                                        {artists.map(artist => {
+                                            const isHubert = artist.data.name.toLowerCase().includes('hubert');
+                                            const hubertOverride = "/uploads/puertojimenez/1787800758850-hubert.jpeg";
+                                            return (
                                             <div class="swiper-slide">
-                                                {artist.data.image && (
-                                                    <Image
-                                                        src={artist.data.image as ImageMetadata}
-                                                        alt={artist.data.name}
-                                                        width={1200}
-                                                        height={500}
-                                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3000ms]"
-                                                    />
+                                                {isHubert ? (
+                                                    <img src={hubertOverride} alt={artist.data.name} width="1200" height="500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3000ms]" loading="lazy" />
+                                                ) : artist.data.image && (
+                                                    <Image src={artist.data.image as ImageMetadata} alt={artist.data.name} width={1200} height={500} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3000ms]" />
                                                 )}
                                             </div>
-                                        ))}
+                                        )})}
                                     </div>
                                 </div>
                             </div>
